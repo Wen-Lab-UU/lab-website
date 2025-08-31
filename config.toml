@@ -1,5 +1,5 @@
 
-baseURL = "/"
+baseURL = "https://Wen-Lab-UU.github.io/lab-website/"
 languageCode = "en-us"
 title = "Wen Lab"
 theme = "PaperMod"
