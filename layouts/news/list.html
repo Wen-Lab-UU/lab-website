@@ -1,0 +1,57 @@
+{{ define "main" }}
+<main class="main">
+  <article class="post-single">
+    <header class="post-header">
+      <h1 class="page-title">{{ .Title }}</h1>
+    </header>
+
+    {{/* Build rows and sort (by date desc, then weight asc) */}}
+    {{ $rows := slice }}
+    {{ with .Params.news }}
+      {{ range . }}
+        {{ $d := "" }}{{ if isset . "date" }}{{ $d = printf "%v" .date }}{{ else if isset . "title" }}{{ $d = printf "%v" .title }}{{ end }}
+        {{ $t := "" }}{{ if isset . "text" }}{{ $t = index . "text" }}{{ else if isset . "content" }}{{ $t = index . "content" }}{{ end }}
+        {{ $w := 999999 }}{{ if isset . "weight" }}{{ $w = int (printf "%v" .weight) }}{{ end }}
+        {{ $rows = $rows | append (dict "date" $d "text" $t "w" $w) }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Prefer ISO dates (YYYY[-MM[-DD]]) so string sort matches chronology */}}
+    {{ $rows = sort (sort $rows "date" "desc") "w" "asc" }}
+
+    <ul class="news-list">
+      {{ range $rows }}
+        <li class="news-item">
+          <div class="news-date">{{ .date }}</div>
+          {{ with .text }}<div class="news-text">{{ . }}</div>{{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </article>
+</main>
+
+<style>
+.page-title{
+  margin: .2rem 0 1.1rem 0;
+  font-size: clamp(1.9rem, 2.2vw, 2.4rem);
+  font-weight: 700;
+}
+.news-list{ list-style: none; margin: 0; padding: 0; }
+.news-item{
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: .85rem 1rem;
+  margin: .55rem 0;
+}
+.news-date{
+  font-weight: 650;
+  letter-spacing: .15px;
+  margin-bottom: .15rem;
+}
+.news-text{
+  font-size: .95rem;
+  line-height: 1.45;
+  opacity: .95;
+}
+</style>
+{{ end }}

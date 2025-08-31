@@ -1,0 +1,62 @@
+{{ define "main" }}
+<main class="main">
+  <article class="post-single">
+    <header class="post-header">
+      <h1 class="page-title">{{ .Title }}</h1>
+    </header>
+
+    {{/* Build rows, coerce weight to int, accept Title/Code/Weight or title/code/weight */}}
+    {{ $rows := slice }}
+    {{ with .Params.courses }}
+      {{ range . }}
+        {{ $title := cond (isset . "title") (index . "title") (index . "Title") }}
+        {{ $code  := cond (isset . "code")  (index . "code")  (index . "Code")  }}
+        {{ $w := 999999 }}
+        {{ if isset . "weight" }}{{ $w = int (printf "%v" (index . "weight")) }}
+        {{ else if isset . "Weight" }}{{ $w = int (printf "%v" (index . "Weight")) }}{{ end }}
+        {{ $rows = $rows | append (dict "title" $title "code" $code "w" $w) }}
+      {{ end }}
+    {{ end }}
+    {{ $rows = sort (sort $rows "title" "asc") "w" "asc" }}
+
+    <ul class="course-list">
+      {{ range $rows }}
+        <li class="course-item">
+          <div class="course-title">{{ .title }}</div>
+          {{ with .code }}
+            <div class="course-code">{{ . }}</div>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </article>
+</main>
+
+<style>
+.page-title{
+  margin: .2rem 0 1.1rem 0;
+  font-size: clamp(1.9rem, 2.2vw, 2.4rem);
+  font-weight: 700;
+}
+
+/* Card-style list; stacked text */
+.course-list{ list-style: none; margin: 0; padding: 0; }
+.course-item{
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: .9rem 1rem;
+  margin: .55rem 0;
+}
+.course-title{
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 .25rem 0;
+}
+.course-code{
+  font-size: .9rem;       /* smaller text */
+  line-height: 1.3;
+  opacity: .85;           /* lighter look */
+  margin: 0;              /* sits right under title */
+}
+</style>
+{{ end }}

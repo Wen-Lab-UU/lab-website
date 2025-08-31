@@ -1,0 +1,71 @@
+{{ define "main" }}
+<main class="main">
+  <article class="post-single">
+    {{/* All People data comes from content/people/_index.md → .Params.people */}}
+
+    {{/* Normalize into groups and sort each group's items by weight (coerced to int) */}}
+    {{ $groups := slice }}
+    {{ with .Params.people }}
+      {{ range . }}
+        {{ $items := slice }}
+        {{ range .items }}
+          {{ $w := 999999 }}
+          {{ if isset . "weight" }}{{ $w = int (printf "%v" .weight) }}{{ end }}
+          {{ $items = $items | append (dict
+            "name" .name
+            "role" .role
+            "email" .email
+            "interests" .interests
+            "photo" .photo
+            "w" $w
+          ) }}
+        {{ end }}
+        {{ $groups = $groups | append (dict "group" .group "items" (sort $items "w" "asc")) }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Render in this order */}}
+    {{ $order := slice "PI" "PhD" "Master" "Alumni" }}
+    {{ range $order }}
+      {{ $gname := . }}
+      {{ $matches := where $groups "group" $gname }}
+      {{ if gt (len $matches) 0 }}
+        {{ $g := index $matches 0 }}
+        {{ if gt (len $g.items) 0 }}
+          <h2 class="people-heading">
+            {{- if eq $gname "PI" -}}Principal Investigator
+            {{- else if eq $gname "PhD" -}}PhD Students
+            {{- else if eq $gname "Master" -}}Master's Students
+            {{- else -}}Alumni{{- end -}}
+          </h2>
+
+          <div class="people-grid">
+            {{ range $g.items }}
+              <div class="person-card">
+                {{ with .photo }}<img src="{{ . | relURL }}" alt="{{ .name }}" class="person-photo" />{{ end }}
+                <div class="person-body">
+                  <div class="person-name">{{ .name }}</div>
+                  {{ with .role }}<div class="person-role">{{ . }}</div>{{ end }}
+                  {{ with .email }}<div class="person-email"><a href="mailto:{{ . }}">{{ . }}</a></div>{{ end }}
+                  {{ with .interests }}<div class="person-interests">{{ delimit . ", " }}</div>{{ end }}
+                </div>
+              </div>
+            {{ end }}
+          </div>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </article>
+</main>
+
+<style>
+.people-heading{ margin-top:1.25rem }
+.people-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem }
+.person-card{ display:flex; gap:.75rem; align-items:flex-start; border:1px solid var(--border); padding:1rem; border-radius:12px }
+.person-photo{ width:72px; height:72px; object-fit:cover; border-radius:10px }
+.person-body{ min-width:0 }
+.person-name{ font-weight:600; margin-bottom:.1rem }
+.person-role, .person-email, .person-interests{ font-size:.92rem; line-height:1.35 }
+.person-interests{ opacity:.9 }
+</style>
+{{ end }}

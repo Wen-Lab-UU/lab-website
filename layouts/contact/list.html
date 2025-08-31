@@ -1,0 +1,59 @@
+{{ define "main" }}
+<main class="main">
+  <article class="post-single">
+    <header class="post-header">
+      <h1 class="page-title">{{ .Title }}</h1>
+    </header>
+
+    <section class="contact-card">
+      <h2 class="section-title">Visiting address</h2>
+      <address class="addr">
+        {{ with .Params.address.lines }}
+          {{ range . }}<div>{{ . }}</div>{{ end }}
+        {{ end }}
+      </address>
+
+      {{ with .Params.address.map_query }}
+        {{ $q := urlquery . }}
+        <a class="map-btn" href="https://www.google.com/maps?q={{ $q }}" target="_blank" rel="noopener">
+          Open in Google Maps
+        </a>
+      {{ end }}
+    </section>
+  </article>
+</main>
+
+<style>
+.page-title{
+  margin:.2rem 0 1.1rem 0;
+  font-size:clamp(1.9rem,2.2vw,2.4rem);
+  font-weight:700;
+}
+.section-title{
+  margin:0 0 .6rem 0;
+  font-size:clamp(1.15rem,1.3vw,1.35rem);
+  font-weight:650;
+  letter-spacing:.2px;
+}
+.contact-card{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:1rem 1.1rem;
+}
+.addr{
+  margin:.1rem 0 .75rem 0;
+  font-style:normal;      /* no italics */
+  line-height:1.45;
+  font-size:.98rem;
+}
+.map-btn{
+  display:inline-block;
+  font-size:.92rem;
+  padding:.4rem .7rem;
+  border:1px solid var(--border);
+  border-radius:9999px;
+  text-decoration:none;
+}
+.map-btn:hover{ text-decoration:underline; }
+</style>
+{{ end }}

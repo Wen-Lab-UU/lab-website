@@ -1,0 +1,83 @@
+
+baseURL = "/"
+languageCode = "en-us"
+title = "Wen Lab"
+theme = "PaperMod"
+[pagination]
+  pagerSize = 10
+
+[params]
+  description = "We explore the hidden links between physics, mathematics, and engineering."
+  author = ""
+  defaultTheme = "auto" # auto, light, dark
+  ShowReadingTime = false
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  disableScrollToTop = false
+  comments = false
+
+[params.profileMode]
+  enabled = true
+  title = "Wen Lab"
+  subtitle = "We explore the hidden links between physics, mathematics, and engineering."
+  imageUrl = "img/lab-logo.png"
+  imageTitle = "lab logo"
+  imageWidth = 160
+  imageHeight = 160
+  buttons = [
+    { name = "People", url = "/people/" },
+    { name = "Publications", url = "/publications/" },
+    { name = "Research", url = "/research/" },
+    { name = "Teaching", url = "/teaching/" },
+    { name = "News", url = "/news/" },
+    { name = "Openings", url = "/openings/" },
+    { name = "Contact", url = "/contact/" }
+  ]
+
+[menu]
+  [[menu.main]]
+    identifier = "people"
+    name = "People"
+    url = "/people/"
+    weight = 10
+  [[menu.main]]
+    identifier = "publications"
+    name = "Publications"
+    url = "/publications/"
+    weight = 20
+  [[menu.main]]
+  identifier = "research"
+  name = "Research"
+  url = "/research/"
+  weight = 30
+  [[menu.main]]
+    identifier = "teaching"
+    name = "Teaching"
+    url = "/teaching/"
+    weight = 40
+  [[menu.main]]
+    identifier = "news"
+    name = "News"
+    url = "/news/"
+    weight = 50
+  [[menu.main]]
+    identifier = "openings"
+    name = "Openings"
+    url = "/openings/"
+    weight = 60
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 70
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params.assets]
+  favicon = "img/favicon.png"
+  favicon16x16 = "img/favicon.png"
+  favicon32x32 = "img/favicon.png"
+  apple_touch_icon = "img/favicon.png"
