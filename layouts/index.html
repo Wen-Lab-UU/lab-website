@@ -1,0 +1,63 @@
+{{ define "main" }}
+<main class="main">
+  <!-- HERO -->
+  {{ $h := .Site.Params.homeHero }}
+  <section class="home-hero">
+    <div class="home-hero-inner">
+      {{ with $h.imageUrl }}
+        <img class="home-hero-logo"
+             src="{{ . | relURL }}"
+             alt="{{ $h.imageTitle }}"
+             width="{{ or $h.imageWidth 160 }}"
+             height="{{ or $h.imageHeight 160 }}" />
+      {{ end }}
+      <h1 class="home-hero-title">{{ or $h.title .Site.Title }}</h1>
+      {{ with $h.subtitle }}<p class="home-hero-subtitle">{{ . }}</p>{{ end }}
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  {{ with .Site.Params.homeIntro.content }}
+    <section class="home-intro">
+      <div class="home-intro-body">
+        {{ . | markdownify }}
+      </div>
+    </section>
+  {{ end }}
+</main>
+
+<style>
+/* Centered hero */
+.home-hero{ display:flex; align-items:center; justify-content:center; text-align:center; padding: 2.2rem 1rem 1.2rem; }
+.home-hero-inner{ max-width: 920px; }
+.home-hero-logo{
+  display:block; margin: 0 auto .8rem auto;
+  border-radius: 12px; /* subtle */
+}
+.home-hero-title{
+  font-weight: 800;
+  margin: 0 0 .35rem 0;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+}
+.home-hero-subtitle{
+  margin: 0 auto;
+  max-width: 840px;
+  opacity: .95;
+  font-size: clamp(1.0rem, 1.6vw, 1.15rem);
+  line-height: 1.55;
+}
+
+/* Intro paragraph block under hero */
+.home-intro{ display:flex; justify-content:center; padding: .6rem 1rem 1.6rem; }
+.home-intro-body{
+  max-width: 900px;
+  font-size: clamp(1.02rem, 1.4vw, 1.1rem);
+  line-height: 1.65;
+  opacity: .98;
+  text-align: center;
+}
+
+/* Ensure white text (your site is dark-only) */
+.home-hero-title, .home-hero-subtitle, .home-intro-body{ color:#fff; }
+</style>
+{{ end }}

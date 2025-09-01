@@ -9,7 +9,8 @@ theme = "PaperMod"
 [params]
   description = "We explore the hidden links between physics, mathematics, and engineering."
   author = ""
-  defaultTheme = "auto" # auto, light, dark
+  defaultTheme = "dark" # auto, light, dark
+  disableThemeToggle = true    # hide the light/dark switch
   ShowReadingTime = false
   ShowShareButtons = true
   ShowPostNavLinks = true
@@ -17,24 +18,24 @@ theme = "PaperMod"
   ShowCodeCopyButtons = true
   disableScrollToTop = false
   comments = false
+  customCSS = ["css/extended/overrides.css"]
 
-[params.profileMode]
-  enabled = true
-  title = "Wen Lab"
-  subtitle = "We explore the hidden links between physics, mathematics, and engineering."
-  imageUrl = "img/lab-logo.png"
-  imageTitle = "lab logo"
-  imageWidth = 160
-  imageHeight = 160
-  buttons = [
-    { name = "People", url = "/people/" },
-    { name = "Publications", url = "/publications/" },
-    { name = "Research", url = "/research/" },
-    { name = "Teaching", url = "/teaching/" },
-    { name = "News", url = "/news/" },
-    { name = "Openings", url = "/openings/" },
-    { name = "Contact", url = "/contact/" }
-  ]
+[params.label]
+    text = "Wen Lab"
+    icon = "img/logo.png"   # school emblem (project-safe path, no leading slash)
+    iconHeight = 28         # tweak: 24–36 works well
+
+[params.homeHero]
+    title = "Wen Lab"
+    subtitle = ""
+    imageUrl = "img/lab-logo.png"   # project-safe path (no leading slash)
+    imageTitle = "lab logo"
+    imageWidth = 160
+    imageHeight = 160
+
+  # Rich intro paragraph shown under the hero
+  [params.homeIntro]
+    content = """We explore the hidden links between physics, mathematics, and engineering, from ions dancing in nanoscale channels to neurons firing in complex networks, building bridges between theory and practice to turn bold ideas into reality."""
 
 [menu]
   [[menu.main]]

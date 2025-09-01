@@ -1,0 +1,17 @@
+<!-- Force dark mode and set background variables -->
+<script>
+  (function(){
+    try {
+      localStorage.setItem('pref-theme','dark');
+      document.documentElement.setAttribute('data-theme','dark');
+    } catch(e){}
+  })();
+</script>
+
+<style>
+  /* Use Hugo to build a baseURL-aware path for the background image */
+  :root{
+    --site-bg: url("{{ "img/bg/Background.png" | relURL }}");
+    --site-bg-overlay: rgba(0,0,0,.65);
+  }
+</style>

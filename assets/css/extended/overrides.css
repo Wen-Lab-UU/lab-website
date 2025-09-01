@@ -1,0 +1,201 @@
+/* ===== Global background (image + a soft dark overlay for readability) ===== */
+html, body { min-height: 100%; }
+body::before{
+  content:"";
+  position: fixed; inset: 0;
+  background-image: var(--site-bg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -2;
+}
+body::after{
+  content:"";
+  position: fixed; inset: 0;
+  background: var(--site-bg-overlay);
+  z-index: -1;
+}
+
+/* ===== Bigger titles across the site ===== */
+/* Page titles used by your custom templates */
+.page-title,
+.post-single .post-header h1,
+.post-title{
+  margin-top: .2rem;
+  margin-bottom: 1.1rem;
+  font-weight: 800;
+  font-size: clamp(2.0rem, 3.0vw, 2.6rem);
+}
+
+/* Home/profile title in PaperMod (covers common class names) */
+.home-info .title,
+.profile .title,
+.profile h1{
+  font-weight: 800;
+  font-size: clamp(2.4rem, 4.0vw, 3.2rem);
+}
+
+/* ===== Home buttons (“main columns”) a little larger, pill-style ===== */
+.buttons a,
+.profile .buttons a,
+.home-info .buttons a{
+  font-size: 1rem;
+  padding: .6rem 1.0rem;
+  border-radius: 9999px;
+  line-height: 1.1;
+}
+
+/* Optional: slightly larger top navigation */
+.header .nav .menu a,
+.menu a{
+  font-size: 1rem;
+}
+
+/* ===== Keep headings white in dark mode (PaperMod sets [data-theme="dark"]) ===== */
+[data-theme="dark"] .page-title,
+[data-theme="dark"] .post-title,
+[data-theme="dark"] .home-info .title,
+[data-theme="dark"] .profile .title{
+  color: #fff;
+}
+
+/* Optional: make home buttons text a touch brighter in dark mode */
+[data-theme="dark"] .buttons a,
+[data-theme="dark"] .profile .buttons a{
+  color: #fff;
+  border-color: rgba(255,255,255,.35);
+}
+
+/* ===== Optional: improve container readability on busy backgrounds ===== */
+/* You can disable if you don’t like the subtle card look */
+.post-single,
+.profile,
+.main .page{
+  backdrop-filter: saturate(110%) blur(2px);
+}
+/* --- Force white text site-wide and improve contrast on a dark bg --- */
+
+/* Make PaperMod's border variable lighter so card outlines remain visible */
+:root, [data-theme="dark"]{
+  --border: rgba(255,255,255,.28);
+}
+
+/* Base typography to white */
+html, body,
+.main, .content, .post-single, .post-content,
+p, li, dt, dd, small, span,
+.header, .footer, .menu, nav, footer {
+  color: #fff !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.page-title, .post-title, .section-title {
+  color: #fff !important;
+}
+
+/* Links: white-ish with underline so they stand out on the dark image */
+a { color: #eaf1ff !important; text-decoration: underline; }
+a:visited { color: #d9e3ff !important; }
+.header .nav .menu a, .menu a { color: #fff !important; text-decoration: none; }
+.header .nav .menu a:hover, .menu a:hover { text-decoration: underline; }
+
+/* Card/box borders using light border color */
+.res-item, .teach-item, .course-item, .opp-item,
+.contact-card, .news-item, .res-card, .post-single {
+  border-color: rgba(255,255,255,.28) !important;
+  background: transparent; /* keep the image visible */
+}
+
+/* Meta/smaller text still bright */
+.post-meta, .news-date, .course-code, .res-pubs-heading {
+  color: rgba(255,255,255,.95) !important;
+}
+
+/* Code blocks readable on dark */
+pre, code, kbd, samp {
+  color: #fff !important;
+  background: rgba(255,255,255,.08) !important;
+}
+pre { border: 1px solid rgba(255,255,255,.18) !important; }
+
+/* Tables */
+table, th, td { color:#fff !important; }
+thead th { border-bottom: 1px solid rgba(255,255,255,.25) !important; }
+tbody td { border-top: 1px solid rgba(255,255,255,.12) !important; }
+
+/* Inputs (if any) */
+input, textarea, select {
+  color:#fff !important;
+  background: rgba(255,255,255,.08) !important;
+  border:1px solid rgba(255,255,255,.28) !important;
+}
+::placeholder { color: rgba(255,255,255,.65) !important; }
+
+/* Buttons/links that look like buttons */
+.buttons a, .profile .buttons a, button, .button {
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.35) !important;
+  background: rgba(255,255,255,.08) !important;
+}
+.buttons a:hover, .profile .buttons a:hover, button:hover, .button:hover {
+  background: rgba(255,255,255,.14) !important;
+}
+
+/* Horizontal rules */
+hr { border-color: rgba(255,255,255,.2) !important; }
+
+/* --- Dark mode background image (only applies when data-theme="dark") --- */
+[data-theme="dark"] body::before{
+  content:"";
+  position: fixed; inset: 0;
+  background-image: var(--site-bg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -2;
+}
+[data-theme="dark"] body::after{
+  content:"";
+  position: fixed; inset: 0;
+  background: var(--site-bg-overlay);
+  z-index: -1;
+}
+
+/* --- Make all text white in dark mode for contrast --- */
+[data-theme="dark"] body,
+[data-theme="dark"] .main, [data-theme="dark"] .content,
+[data-theme="dark"] .post-single, [data-theme="dark"] .post-content,
+[data-theme="dark"] p, [data-theme="dark"] li, [data-theme="dark"] span,
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3,
+[data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6,
+[data-theme="dark"] .page-title, [data-theme="dark"] .post-title, [data-theme="dark"] .section-title,
+[data-theme="dark"] .header, [data-theme="dark"] .footer, [data-theme="dark"] .menu, [data-theme="dark"] nav {
+  color: #fff !important;
+}
+
+/* Links readable on dark */
+[data-theme="dark"] a { color: #eaf1ff !important; text-decoration: underline; }
+[data-theme="dark"] a:hover { text-decoration: underline; }
+
+/* Lighten borders on dark */
+:root, [data-theme="dark"] { --border: rgba(255,255,255,.28); }
+[data-theme="dark"] .post-single, [data-theme="dark"] .res-item, [data-theme="dark"] .course-item,
+[data-theme="dark"] .opp-item, [data-theme="dark"] .contact-card, [data-theme="dark"] .news-item {
+  border-color: var(--border) !important;
+  background: transparent;
+}
+
+/* Tidy spacing for the school emblem next to the site title */
+.header .logo, .logo, .site-title {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+}
+
+.header .logo img,
+.site-title img {
+  border-radius: 8px; /* subtle rounding */
+  box-shadow: 0 0 0 1px rgba(255,255,255,.15); /* faint ring for dark bg */
+}
+
