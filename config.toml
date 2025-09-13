@@ -1,8 +1,9 @@
 
 baseURL = "https://chenyuwenlab.com/"
 languageCode = "en-us"
-title = "Wen Lab"
+title = "Chenyu Wen Lab"
 theme = "PaperMod"
+canonifyURLs = true
 [pagination]
   pagerSize = 10
 
@@ -21,12 +22,12 @@ theme = "PaperMod"
   customCSS = ["css/extended/overrides.css"]
 
 [params.label]
-    text = "Wen Lab"
+    text = "Chenyu Wen Lab"
     icon = "img/logo.png"   # school emblem (project-safe path, no leading slash)
     iconHeight = 28         # tweak: 24–36 works well
 
 [params.homeHero]
-    title = "Wen Lab"
+    title = "Chenyu Wen Lab"
     subtitle = ""
     imageUrl = "img/lab-logo.png"   # project-safe path (no leading slash)
     imageTitle = "lab logo"
