@@ -1,17 +1,17 @@
-
 baseURL = "https://chenyuwenlab.com/"
 languageCode = "en-us"
 title = "Chenyu Wen Lab"
 theme = "PaperMod"
 canonifyURLs = true
+
 [pagination]
   pagerSize = 10
 
 [params]
-  description = "We explore the hidden links between physics, mathematics, and engineering."
+  description = "Chenyu Wen Lab at Uppsala University: neuromorphic electronics, neuronal dynamics, nanopore sensing, electrokinetics, and ML-based signal processing."
   author = ""
-  defaultTheme = "dark" # auto, light, dark
-  disableThemeToggle = true    # hide the light/dark switch
+  defaultTheme = "dark"        # force dark
+  disableThemeToggle = true    # hide light/dark switch
   ShowReadingTime = false
   ShowShareButtons = true
   ShowPostNavLinks = true
@@ -19,17 +19,20 @@ canonifyURLs = true
   ShowCodeCopyButtons = true
   disableScrollToTop = false
   comments = false
+  # ensure our custom CSS is bundled
   customCSS = ["css/extended/overrides.css"]
 
-[params.label]
+  # Header brand (school emblem + text, appears on every page)
+  [params.label]
     text = "Chenyu Wen Lab"
-    icon = "img/logo.png"   # school emblem (project-safe path, no leading slash)
-    iconHeight = 28         # tweak: 24–36 works well
+    icon = "img/logo.png"      # school emblem file (project-safe path)
+    iconHeight = 28
 
-[params.homeHero]
+  # Homepage hero (keeps your lab logo centered)
+  [params.homeHero]
     title = "Chenyu Wen Lab"
     subtitle = ""
-    imageUrl = "img/lab-logo.png"   # project-safe path (no leading slash)
+    imageUrl = "img/lab-logo.png"   # lab logo (keep this file in static/img/)
     imageTitle = "lab logo"
     imageWidth = 160
     imageHeight = 160
@@ -44,31 +47,37 @@ canonifyURLs = true
     name = "People"
     url = "/people/"
     weight = 10
+
   [[menu.main]]
     identifier = "publications"
     name = "Publications"
     url = "/publications/"
     weight = 20
+
   [[menu.main]]
-  identifier = "research"
-  name = "Research"
-  url = "/research/"
-  weight = 30
+    identifier = "research"
+    name = "Research"
+    url = "/research/"
+    weight = 30
+
   [[menu.main]]
     identifier = "teaching"
     name = "Teaching"
     url = "/teaching/"
     weight = 40
+
   [[menu.main]]
     identifier = "news"
     name = "News"
     url = "/news/"
     weight = 50
+
   [[menu.main]]
     identifier = "openings"
     name = "Openings"
     url = "/openings/"
     weight = 60
+
   [[menu.main]]
     identifier = "contact"
     name = "Contact"
