@@ -20,9 +20,10 @@
                 {{ .title }}
               {{ end }}
             </div>
-            {{ with .description }}
-              <div class="opp-desc">{{ . }}</div>
-            {{ end }}
+           {{ with .description }}
+  <div class="opp-desc">{{ . | markdownify }}</div>
+{{ end }}
+
           </li>
         {{ end }}
       </ul>
