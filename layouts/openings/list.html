@@ -5,30 +5,62 @@
       <h1 class="page-title">{{ .Title }}</h1>
     </header>
 
+    {{/* Intro (compact card) */}}
     {{ with .Params.intro }}
-      <p class="intro">{{ . | markdownify }}</p>
+      <section class="intro-card">
+        <div class="intro-body">{{ . | markdownify }}</div>
+      </section>
     {{ end }}
 
-    {{ with .Params.opportunities }}
-      <ul class="opp-list">
+    {{/* Current openings */}}
+    {{ with .Params.current_openings }}
+      <h2 class="sec-title">Current Openings</h2>
+      <ul class="card-list">
         {{ range . }}
-          <li class="opp-item">
-            <div class="opp-title">
+          <li class="card-item">
+            <div class="card-title">{{ .title }}</div>
+            {{ with .description }}<div class="card-desc">{{ . | markdownify }}</div>{{ end }}
+            {{ with .url }}
+              <div class="card-actions"><a href="{{ . }}" target="_blank" rel="noopener">Learn more</a></div>
+            {{ end }}
+          </li>
+        {{ end }}
+      </ul>
+    {{ end }}
+
+    {{/* Funding opportunities */}}
+    {{ with .Params.opportunities }}
+      <h2 class="sec-title">Funding Opportunities</h2>
+      <ul class="card-list">
+        {{ range . }}
+          <li class="card-item">
+            <div class="card-title">
               {{ if and (isset . "url") .url }}
                 <a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>
               {{ else }}
                 {{ .title }}
               {{ end }}
             </div>
-           {{ with .description }}
-  <div class="opp-desc">{{ . | markdownify }}</div>
-{{ end }}
-
+            {{ with .description }}<div class="card-desc">{{ . | markdownify }}</div>{{ end }}
           </li>
         {{ end }}
       </ul>
     {{ end }}
 
+    {{/* Student projects */}}
+    {{ with .Params.student_projects }}
+      <h2 class="sec-title">Student Projects</h2>
+      <ul class="card-list">
+        {{ range . }}
+          <li class="card-item">
+            <div class="card-title">{{ .title }}</div>
+            {{ with .description }}<div class="card-desc">{{ . | markdownify }}</div>{{ end }}
+          </li>
+        {{ end }}
+      </ul>
+    {{ end }}
+
+    {{/* Contact */}}
     {{ with .Params.contact }}
       <div class="contact-card">
         <div class="contact-title">Contact</div>
@@ -44,42 +76,32 @@
 </main>
 
 <style>
-.page-title{
-  margin: .2rem 0 1.1rem 0;
-  font-size: clamp(1.9rem, 2.2vw, 2.4rem);
-  font-weight: 700;
-}
+.page-title{ margin:.2rem 0 1.1rem; font-size:clamp(1.9rem,2.2vw,2.4rem); font-weight:700; }
 
-.intro{ font-size: .98rem; line-height: 1.55; opacity: .95; }
+/* Section headings */
+.sec-title{ margin:1.2rem 0 .6rem; font-weight:700; font-size:1.1rem; letter-spacing:.2px; }
 
-.opp-list{ list-style: none; margin: 1rem 0 0 0; padding: 0; }
-.opp-item{
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: .9rem 1rem;
-  margin: .6rem 0;
-}
-.opp-title{
-  font-weight: 600;
-  line-height: 1.35;
-  margin-bottom: .2rem;
-}
-.opp-title a{ text-decoration: none; }
-.opp-desc{ font-size: .95rem; line-height: 1.45; opacity: .95; }
+/* Intro card */
+.intro-card{ border:1px solid var(--border); border-radius:12px; padding:1rem 1.1rem; margin:0 0 1rem 0; background:transparent; }
+.intro-body{ font-size:.98rem; line-height:1.6; }
 
-.contact-card{
-  margin-top: 1.5rem;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1rem;
-  background: transparent;
-}
-.contact-title{
-  font-weight: 650;
-  margin: 0 0 .35rem 0;
-  letter-spacing: .2px;
-}
-.contact-line{ font-size: .95rem; margin-bottom: .35rem; }
-.contact-note{ font-size: .92rem; line-height: 1.45; opacity: .95; }
+/* Generic card list */
+.card-list{ list-style:none; margin:0; padding:0; }
+.card-item{ border:1px solid var(--border); border-radius:12px; padding:.9rem 1rem; margin:.6rem 0; background:transparent; }
+.card-title{ font-weight:650; margin:0 0 .25rem 0; line-height:1.35; }
+.card-title a{ text-decoration:none; }
+.card-title a:hover{ text-decoration:underline; }
+.card-desc{ font-size:.95rem; line-height:1.5; }
+.card-desc ul{ margin:.4rem 0 .2rem 1.2rem; }
+.card-actions{ margin-top:.4rem; }
+
+/* Contact card */
+.contact-card{ margin-top:1.3rem; border:1px solid var(--border); border-radius:12px; padding:1rem 1.1rem; background:transparent; }
+.contact-title{ font-weight:650; margin:0 0 .35rem 0; }
+.contact-line{ font-size:.95rem; margin-bottom:.35rem; }
+.contact-note{ font-size:.92rem; line-height:1.45; }
+
+/* Ensure text contrast for your dark background */
+.page-title, .sec-title, .intro-body, .card-item, .contact-card { color:#fff; }
 </style>
 {{ end }}
