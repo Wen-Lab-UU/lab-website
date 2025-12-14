@@ -21,6 +21,8 @@ current_openings:
 
       The application deadline is **2026-02-02**.
 
+funding_intro: |
+  Other funding opportunities to join us as a postdoc or visiting scholar.
 opportunities:
   - title: "Marie Skłodowska-Curie Actions (MSCA) Postdoctoral Fellowships"
     url: "https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships"
@@ -39,8 +41,8 @@ opportunities:
     description: "Visiting researcher fellowship."
 
 student_projects:
-  - title: "Master's thesis projects (Sweden)"
-    description: "Master thesis projects are available for students from Sweden. Contact us for details."
+  - title: "Master and bachelor thesis projects(Sweden)"
+    description: "Master and bachelor thesis projects are available for students from Sweden. Contact us for details."
 
 contact:
   name: "Dr. Chenyu Wen"

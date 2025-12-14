@@ -29,10 +29,14 @@
       </ul>
     {{ end }}
 
-    {{/* Funding opportunities */}}
-    {{ with .Params.opportunities }}
-      <h2 class="sec-title">Funding Opportunities</h2>
-      <ul class="card-list">
+  {{/* Funding opportunities */}}
+{{ with .Params.opportunities }}
+  <h2 class="sec-title">Funding Opportunities</h2>
+  {{ with $.Page.Params.funding_intro }}
+    <div class="intro-body" style="margin: .2rem 0 .6rem 0;">{{ . | markdownify }}</div>
+  {{ end }}
+  <ul class="card-list">
+
         {{ range . }}
           <li class="card-item">
             <div class="card-title">
