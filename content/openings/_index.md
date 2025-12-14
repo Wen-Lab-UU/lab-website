@@ -9,7 +9,7 @@ cascade:
 intro: |
   We are looking for motivated and outstanding students. If you are interested in our researches, just contact us.
 
-  We currently have the following openings:
+  We currently have the following openings.
 
 current_openings:
   - title: "Funded Postdoc: Nanopore single-molecule detection"
