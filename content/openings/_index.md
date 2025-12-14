@@ -39,7 +39,7 @@ opportunities:
     url: "https://www.swgc.org/gastforskarstipendier-sverige"
     description: "Visiting researcher fellowship."
 
-title: "Master’s thesis projects (Sweden)"
+- title: "Master’s thesis projects (Sweden)"
     description: "Master thesis projects are available for students from Sweden. Contact us for details."
 
 contact:
