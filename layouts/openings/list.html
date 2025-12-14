@@ -7,10 +7,11 @@
 
     {{/* Intro (compact card) */}}
     {{ with .Params.intro }}
-      <section class="intro-card">
-        <div class="intro-body">{{ . | markdownify }}</div>
-      </section>
-    {{ end }}
+  <section class="intro-plain">
+    <div class="intro-body">{{ . | markdownify }}</div>
+  </section>
+{{ end }}
+
 
     {{/* Current openings */}}
     {{ with .Params.current_openings }}
@@ -82,7 +83,7 @@
 .sec-title{ margin:1.2rem 0 .6rem; font-weight:700; font-size:1.1rem; letter-spacing:.2px; }
 
 /* Intro card */
-.intro-card{ border:1px solid var(--border); border-radius:12px; padding:1rem 1.1rem; margin:0 0 1rem 0; background:transparent; }
+.intro-plain{ margin: 0 0 1rem 0; }
 .intro-body{ font-size:.98rem; line-height:1.6; }
 
 /* Generic card list */
