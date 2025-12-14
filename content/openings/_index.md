@@ -20,8 +20,8 @@ opportunities:
       The application deadline is **2026-02-02**.
 
   - title: "Marie Skłodowska-Curie Actions (MSCA) Postdoctoral Fellowships"
-    url: ""
-    description: "Competitive EU fellowships for postdocs."
+    url: "https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships"
+    description: "Competitive EU fellowships for postdoctoral researchers."
 
   - title: "Carl Tryggers Stiftelse Postdoc"
     url: "https://www.carltryggersstiftelse.se/ansok/"
@@ -38,6 +38,9 @@ opportunities:
   - title: "Wenner-Gren Visiting Scholar"
     url: "https://www.swgc.org/gastforskarstipendier-sverige"
     description: "Visiting researcher fellowship."
+
+title: "Master’s thesis projects (Sweden)"
+    description: "Master thesis projects are available for students from Sweden. Contact us for details."
 
 contact:
   name: "Dr. Chenyu Wen"
