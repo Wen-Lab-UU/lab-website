@@ -37,7 +37,7 @@ people:
         interests:
           - "Neuromorphic devices and circuits"
           - "Neuronal dynamics"
-        photo: ""
+        photo: "img/people/zhiweili.jpg"
         weight: 1
 
   - group: "Master Student"
