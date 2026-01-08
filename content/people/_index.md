@@ -11,48 +11,105 @@ people:
     items:
       - name: "Dr. Chenyu Wen"
         role: "Tenure-track Assistant Professor"
-        email: "Chenyu.wen@angstrom.uu.se"
-        interests: ["Nonlinear dynamics", "Semiconductor modeling", "Bifurcation"]
-        photo: ""           #  photo: "/img/people/chenyuwen.jpg"
-
+        affiliation: |
+          Division of Solid-State Electronics,
+          Department of Electrical Engineering,
+          Uppsala University
+        email: "chenyu.wen@angstrom.uu.se"
+        interests:
+          - "Neuromorphic devices and circuits"
+          - "Neuronal dynamics"
+          - "Nanopore sensing"
+          - "Electronic device characterization and modeling"
+          - "Transport in nanoconfinement"
+          - "Nano-fluidics and iontronics"
+          - "Machine learning algorithms"
+          - "Signal processing"
+        photo: "img/people/chenyuwen.jpg"
         weight: 1
 
   - group: PhD
     items:
       - name: "Zhiwei Li"
-        role: "PhD Student"
-        email: "Zhiwei.li@angstrom.uu.se"
-        interests: ["Device modeling", "Numerical methods"]
-        photo: ""     # replace with actual photo path, e.g., /img/people/zhiwei-li.jpg
-        weight: 10
+        role: ""   # removed “PhD Student”
+        affiliation: ""
+        email: "zhiwei.li@angstrom.uu.se"
+        interests:
+          - "Neuromorphic devices and circuits"
+          - "Neuronal dynamics"
+        photo: ""
+        weight: 1
 
-  - group: Master
+  - group: "Master Student"
     items:
       - name: "Xingdi Tong"
-        role: "Master's Student"
+        role: ""   # removed “Master’s Student”
+        affiliation: ""
         email: ""
-        interests: ["Parameter estimation"]
-        photo: ""       # replace with actual photo path, e.g., /img/people/xingdi-tong.jpg
-        weight: 10
+        interests:
+          - "Machine learning for signal processing"
+        photo: ""
+        weight: 1
+
+      - name: "Xiangyi Shen"
+        role: ""
+        affiliation: ""
+        email: ""
+        interests:
+          - "Neuron network by FPGA"
+        photo: ""
+        weight: 2
+
+  - group: "Bachelor Student"
+    items:
+      - name: "Haza Newman"
+        role: ""
+        affiliation: ""
+        email: ""
+        interests:
+          - "Neuromorphic circuits by electronic devices"
+        photo: ""
+        weight: 1
 
   - group: Alumni
     items:
-      - name: "Pouya Ahmadi"
-        role: "M.Sc. (2025)"
+      - name: "M. Sc. Thor Chumakonde"
+        role: "Course project (2026)"
+        affiliation: ""
         email: ""
-        interests: [""]
+        interests: []
         photo: ""
-        weight: 11
-      - name: "Sigfrid Nevrell"
-        role: ""
+        weight: 1
+
+      - name: "M. Sc. Ellen Gottberg"
+        role: "Course project (2026)"
+        affiliation: ""
         email: ""
-        interests: [""]
+        interests: []
         photo: ""
-        weight: 12
-      - name: "Viktor Westberg"
-        role: "M.Sc. (2025)"
+        weight: 2
+
+      - name: "M. Sc. Pouya Ahmadi"
+        role: "Master thesis project (2025)"
+        affiliation: ""
         email: ""
-        interests: [""]
+        interests: []
         photo: ""
-        weight: 13
+        weight: 3
+
+      - name: "M. Sc. Sigfrid Nevrell"
+        role: "Course project (2025)"
+        affiliation: ""
+        email: ""
+        interests: []
+        photo: ""
+        weight: 4
+
+      - name: "M. Sc. Viktor Westberg"
+        role: "Course project (2025)"
+        affiliation: ""
+        email: ""
+        interests: []
+        photo: ""
+        weight: 5
 ---

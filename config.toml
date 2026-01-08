@@ -37,9 +37,31 @@ canonifyURLs = true
     imageWidth = 160
     imageHeight = 160
 
-  # Rich intro paragraph shown under the hero
-  [params.homeIntro]
-    content = """We explore the hidden links between physics, mathematics, and engineering, from ions dancing in nanoscale channels to neurons firing in complex networks, building bridges between theory and practice to turn bold ideas into reality."""
+
+
+  # Lower-level homepage “about” text (smaller than the main intro)
+[params.homeIntro]
+content = """**We explore the hidden links between physics, mathematics, and engineering, from ions dancing in nanoscale channels to neurons firing in complex networks, building bridges between theory and practice to turn bold ideas into reality.**"""
+
+[params.homeAbout]
+content = """
+*Mathematics is the art of giving the same name to different things,* said by Jules Henri Poincaré, a French mathematician, theoretical physicist, and engineer.
+
+For us, “the same name” extends beyond mathematical structures, and it implies physical principles and engineering experience. We are passionate about uncovering these hidden connections in highly interdisciplinary and dynamic contexts.
+
+In the microscale, we explore the physics in nano world, revealing the interactions among water, ions, and surfaces in nanoconfinement. We investigate transport phenomena in nanopores, electrokinetics and electro-hydrodynamics, and the translocation and trapping of biomolecules. We fabricate nanofluidic devices for biomolecule sensing and neuromorphic applications, for fundamental physics studies, and also simply for fun.
+
+On a macroscale, we model nonlinear dynamical systems, studying the behaviors and patterns of neurons, synapses, and neural networks for next-generation neuromorphic computing, bio-silicon communication, and biomedical/robotics applications. We design and develop electronic circuits and systems, construct measurement platforms for validation and prototyping, for engineering, and for turning blueprints into functional reality. These same names represent bridges connecting different disciplines. We build these bridges to unite theory and practice, physics and engineering, curiosity and creation.
+"""
+
+  # Funding block on homepage (with image)
+  [params.homeFunding]
+    title = "Funding"
+    text  = "We gratefully acknowledge the support from our funding agencies and programs."
+    image = "img/funding/funding.png"   # you will add this image under static/img/funding/
+    imageAlt = "Funding logos"
+
+
 
 [menu]
   [[menu.main]]

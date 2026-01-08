@@ -1,63 +1,93 @@
 {{ define "main" }}
 <main class="main">
-  <!-- HERO -->
+
+  <!-- HERO: logo and title on separate lines, centered -->
   {{ $h := .Site.Params.homeHero }}
   <section class="home-hero">
-    <div class="home-hero-inner">
-      {{ with $h.imageUrl }}
-        <img class="home-hero-logo"
-             src="{{ . | relURL }}"
-             alt="{{ $h.imageTitle }}"
-             width="{{ or $h.imageWidth 160 }}"
-             height="{{ or $h.imageHeight 160 }}" />
+    <div align="center">
+
+      {{ with (or $h.imageUrl "img/lab-logo.png") }}
+        <img
+          src="{{ . | relURL }}"
+          alt="{{ or $h.imageTitle "Lab logo" }}"
+          width="{{ or $h.imageWidth 160 }}"
+          height="{{ or $h.imageHeight 160 }}"
+        />
       {{ end }}
-      <h1 class="home-hero-title">{{ or $h.title .Site.Title }}</h1>
-      {{ with $h.subtitle }}<p class="home-hero-subtitle">{{ . }}</p>{{ end }}
+
+      <br />
+      <br />
+
+      <h1>{{ or $h.title .Site.Title }}</h1>
+
+      {{ with $h.subtitle }}
+        <p>{{ . }}</p>
+      {{ end }}
+
+      <!-- space between hero and intro -->
+      <br />
+      <br />
     </div>
   </section>
 
-  <!-- INTRO -->
+  <!-- MAIN INTRO: centered -->
   {{ with .Site.Params.homeIntro.content }}
     <section class="home-intro">
-      <div class="home-intro-body">
+      <div class="home-intro-body" align="center">
         {{ . | markdownify }}
       </div>
     </section>
   {{ end }}
+
+  <!-- spacing between intro and about -->
+  <br />
+
+  <!-- HOME ABOUT: justified -->
+  {{ with .Site.Params.homeAbout.content }}
+    <section class="home-about">
+      <div class="home-about-body" align="justify">
+        {{ . | markdownify }}
+      </div>
+    </section>
+  {{ end }}
+
+
+  <!-- spacing before News -->
+  <br />
+  <br />
+
+  <!-- NEWS (simple, hard-coded; formatted like Funding heading) -->
+  <section class="home-funding">
+    <div class="home-funding-inner">
+      <h2>News</h2>
+      <p>2025-03-01 Welcome Zhiwei Li, who joined the laboratory as a PhD student.</p>
+    </div>
+  </section>
+
+  <!-- spacing before Funding -->
+  <br />
+  <br />
+
+  <!-- Funding block with image -->
+  {{ $f := .Site.Params.homeFunding }}
+  {{ if $f }}
+    <section class="home-funding">
+      <div class="home-funding-inner">
+        {{ with $f.title }}<h2>{{ . }}</h2>{{ end }}
+        {{ with $f.text }}<p>{{ . }}</p>{{ end }}
+
+        {{ with $f.image }}
+          <div class="funding-image-wrap">
+            <img
+              src="{{ . | relURL }}"
+              alt="{{ or $f.imageAlt "Funding" }}"
+            />
+          </div>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+
 </main>
-
-<style>
-/* Centered hero */
-.home-hero{ display:flex; align-items:center; justify-content:center; text-align:center; padding: 2.2rem 1rem 1.2rem; }
-.home-hero-inner{ max-width: 920px; }
-.home-hero-logo{
-  display:block; margin: 0 auto .8rem auto;
-  border-radius: 12px; /* subtle */
-}
-.home-hero-title{
-  font-weight: 800;
-  margin: 0 0 .35rem 0;
-  font-size: clamp(2.2rem, 4vw, 3rem);
-}
-.home-hero-subtitle{
-  margin: 0 auto;
-  max-width: 840px;
-  opacity: .95;
-  font-size: clamp(1.0rem, 1.6vw, 1.15rem);
-  line-height: 1.55;
-}
-
-/* Intro paragraph block under hero */
-.home-intro{ display:flex; justify-content:center; padding: .6rem 1rem 1.6rem; }
-.home-intro-body{
-  max-width: 900px;
-  font-size: clamp(1.02rem, 1.4vw, 1.1rem);
-  line-height: 1.65;
-  opacity: .98;
-  text-align: center;
-}
-
-/* Ensure white text (your site is dark-only) */
-.home-hero-title, .home-hero-subtitle, .home-intro-body{ color:#fff; }
-</style>
 {{ end }}

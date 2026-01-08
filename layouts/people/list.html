@@ -1,71 +1,213 @@
 {{ define "main" }}
 <main class="main">
   <article class="post-single">
-    {{/* All People data comes from content/people/_index.md → .Params.people */}}
+    <header class="post-header">
+      <h1 class="page-title">{{ .Title }}</h1>
+    </header>
 
-    {{/* Normalize into groups and sort each group's items by weight (coerced to int) */}}
-    {{ $groups := slice }}
-    {{ with .Params.people }}
-      {{ range . }}
-        {{ $items := slice }}
-        {{ range .items }}
-          {{ $w := 999999 }}
-          {{ if isset . "weight" }}{{ $w = int (printf "%v" .weight) }}{{ end }}
-          {{ $items = $items | append (dict
-            "name" .name
-            "role" .role
-            "email" .email
-            "interests" .interests
-            "photo" .photo
-            "w" $w
-          ) }}
-        {{ end }}
-        {{ $groups = $groups | append (dict "group" .group "items" (sort $items "w" "asc")) }}
-      {{ end }}
-    {{ end }}
+    {{ $groups := .Params.people }}
+    {{ if not $groups }}
+      <p>No people data found. Edit <code>content/people/_index.md</code>.</p>
+    {{ else }}
 
-    {{/* Render in this order */}}
-    {{ $order := slice "PI" "PhD" "Master" "Alumni" }}
-    {{ range $order }}
-      {{ $gname := . }}
-      {{ $matches := where $groups "group" $gname }}
-      {{ if gt (len $matches) 0 }}
-        {{ $g := index $matches 0 }}
-        {{ if gt (len $g.items) 0 }}
-          <h2 class="people-heading">
-            {{- if eq $gname "PI" -}}Principal Investigator
-            {{- else if eq $gname "PhD" -}}PhD Students
-            {{- else if eq $gname "Master" -}}Master's Students
-            {{- else -}}Alumni{{- end -}}
-          </h2>
+      {{/* Desired display order */}}
+      {{ $order := slice "PI" "PhD" "Master Student" "Bachelor Student" "Alumni" }}
 
-          <div class="people-grid">
-            {{ range $g.items }}
-              <div class="person-card">
-                {{ with .photo }}<img src="{{ . | relURL }}" alt="{{ .name }}" class="person-photo" />{{ end }}
-                <div class="person-body">
-                  <div class="person-name">{{ .name }}</div>
-                  {{ with .role }}<div class="person-role">{{ . }}</div>{{ end }}
-                  {{ with .email }}<div class="person-email"><a href="mailto:{{ . }}">{{ . }}</a></div>{{ end }}
-                  {{ with .interests }}<div class="person-interests">{{ delimit . ", " }}</div>{{ end }}
-                </div>
-              </div>
+      {{ range $order }}
+        {{ $gname := . }}
+        {{ $g := first 1 (where $groups "group" $gname) }}
+        {{ if gt (len $g) 0 }}
+          {{ $group := index $g 0 }}
+          {{ $items := $group.items }}
+          {{ if and $items (gt (len $items) 0) }}
+
+            <h2 class="sec-title">{{ $gname }}</h2>
+
+            {{/* Sort by weight safely */}}
+            {{ $rows := slice }}
+            {{ range $items }}
+              {{ $w := 999999 }}
+              {{ if isset . "weight" }}{{ $w = int (printf "%v" .weight) }}{{ end }}
+              {{ $rows = $rows | append (dict "p" . "w" $w) }}
             {{ end }}
-          </div>
+            {{ $rows = sort $rows "w" "asc" }}
+
+            <div class="people-grid">
+              {{ range $rows }}
+                {{ $p := .p }}
+
+                {{ $photo := "" }}
+                {{ with (index $p "photo") }}{{ $photo = . }}{{ end }}
+
+                {{/* Only show photo for PI and PhD, and only if photo is non-empty */}}
+                {{ $showPhoto := and (or (eq $gname "PI") (eq $gname "PhD")) (ne $photo "") }}
+
+             <div class="person-card {{ if $showPhoto }}has-photo{{ else }}no-photo{{ end }} {{ if or (eq $gname "PI") (eq $gname "PhD") }}pi-wide{{ end }}">
+
+
+
+                  {{ if $showPhoto }}
+                    <div class="person-photo">
+                      <img src="{{ $photo | relURL }}" alt="{{ index $p "name" }}" loading="lazy" />
+                    </div>
+                  {{ end }}
+
+                  <div class="person-meta">
+                    <div class="person-name">{{ index $p "name" }}</div>
+
+                    {{ with (index $p "role") }}
+                      {{ if ne . "" }}<div class="person-role">{{ . }}</div>{{ end }}
+                    {{ end }}
+
+                    {{ with (index $p "affiliation") }}
+                      {{ if ne . "" }}<div class="person-affil">{{ . | markdownify }}</div>{{ end }}
+                    {{ end }}
+
+                    {{ with (index $p "email") }}
+                      {{ if ne . "" }}
+                        <div class="person-email"><a href="mailto:{{ . }}">{{ . }}</a></div>
+                      {{ end }}
+                    {{ end }}
+
+                    {{/* Interests: regular paragraph, comma-separated (no boxes) */}}
+                    {{ with (index $p "interests") }}
+  {{ $t := printf "%T" . }}
+  {{ if in $t "[]" }}
+    {{ if gt (len .) 0 }}
+      <div class="person-interests">{{ delimit . ", " }}</div>
+    {{ end }}
+  {{ else }}
+    {{ if ne (printf "%v" .) "" }}
+      <div class="person-interests">{{ printf "%v" . }}</div>
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+                  </div>
+
+                </div>
+              {{ end }}
+            </div>
+
+          {{ end }}
         {{ end }}
       {{ end }}
+
     {{ end }}
   </article>
 </main>
 
 <style>
-.people-heading{ margin-top:1.25rem }
-.people-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem }
-.person-card{ display:flex; gap:.75rem; align-items:flex-start; border:1px solid var(--border); padding:1rem; border-radius:12px }
-.person-photo{ width:72px; height:72px; object-fit:cover; border-radius:10px }
-.person-body{ min-width:0 }
-.person-name{ font-weight:600; margin-bottom:.1rem }
-.person-role, .person-email, .person-interests{ font-size:.92rem; line-height:1.35 }
-.person-interests{ opacity:.9 }
+.page-title{
+  margin:.2rem 0 1.1rem 0;
+  font-size:clamp(1.9rem,2.2vw,2.4rem);
+  font-weight:700;
+  color:#fff;
+}
+
+.sec-title{
+  margin:1.4rem 0 .7rem 0;
+  padding-top:.6rem;
+  border-top:1px solid rgba(255,255,255,.14);
+  font-weight:750;
+  font-size:1.1rem;
+  color:#fff;
+}
+
+.people-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1rem;
+}
+
+/* Base card */
+.person-card{
+  padding:1rem;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:14px;
+  background:rgba(0,0,0,.18);
+  color:#fff;
+}
+
+/* Only PI/PhD cards with photos use the 2-column layout */
+.person-card.has-photo{
+  display:grid;
+  grid-template-columns:110px 1fr;
+  gap:.95rem;
+  align-items:start;
+}
+
+/* Make PI cards span full width (wider, nicer) */
+.person-card.pi-wide{
+  grid-column: 1 / -1;
+}
+
+/* Optional: give PI a bit more breathing room */
+.person-card.pi-wide.has-photo{
+  grid-template-columns: 140px 1fr;
+  gap: 1.1rem;
+}
+
+/* Optional: slightly larger PI photo */
+.person-card.pi-wide .person-photo img{
+  width: 140px;
+  height: 140px;
+  border-radius: 14px;
+}
+
+
+/* Everyone else: no photo block, simple single-column */
+.person-card.no-photo{
+  display:block;
+}
+
+.person-photo img{
+  width:110px;
+  height:110px;
+  border-radius:14px;
+  object-fit:cover;
+  display:block;
+  box-shadow:0 0 0 1px rgba(255,255,255,.10);
+}
+
+.person-name{
+  font-weight:800;
+  font-size:1.08rem;
+  margin:0 0 .25rem 0;
+  line-height:1.25;
+}
+.person-role{
+  opacity:.92;
+  font-size:.95rem;
+  margin-bottom:.2rem;
+}
+.person-affil{
+  opacity:.88;
+  font-size:.92rem;
+  line-height:1.45;
+  margin-bottom:.35rem;
+  white-space:pre-line;
+}
+.person-email{
+  font-size:.92rem;
+  margin-bottom:.45rem;
+}
+.person-email a{ color:#fff; text-decoration:none; }
+.person-email a:hover{ text-decoration:underline; }
+
+/* Interests as normal paragraph (no tags/boxes) */
+.person-interests{
+  margin-top:.35rem;
+  opacity:.92;
+  font-size:.92rem;
+  line-height:1.55;
+}
+
+@media (max-width:760px){
+  .people-grid{ grid-template-columns:1fr; }
+
+  .person-card.has-photo{ grid-template-columns:96px 1fr; }
+  .person-photo img{ width:96px; height:96px; border-radius:12px; }
+}
 </style>
 {{ end }}

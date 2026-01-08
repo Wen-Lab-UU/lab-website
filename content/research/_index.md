@@ -16,7 +16,7 @@ research:
     weight: 1
 
   - title: "Neuronal Dynamics and Modeling"
-    summary: "Modeling and simulating the dynamics of neurons, synapses, and neural networks using physical models and dynamical systems theory."
+    summary: "Modeling and simulating the dynamics of neurons, synapses, and neural networks using physical models and dynamical system theory."
     image: "/img/research/P2.png"
     publications: []
     weight: 2
@@ -33,8 +33,8 @@ research:
     publications: []
     weight: 4
 
-  - title: "Machine-Learning-Based Signal Processing"
-    summary: "Understanding and developing machine-learning algorithms for signal processing in single-molecule technologies."
+  - title: "Machine Learning-Based Signal Processing"
+    summary: "Understanding and developing machine learning algorithms for signal processing for single-molecule technologies."
     image: "/img/research/P5.png"
     publications: []
     weight: 5

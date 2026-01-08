@@ -1,0 +1,35 @@
+/* Home: make intro and about clearly different */
+.homeIntro p,
+.homeAbout p{
+  color:#fff;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Intro: larger */
+.homeIntro{
+  max-width: 78ch;
+  margin: 0 auto 1rem auto;
+}
+.homeIntro p{
+  font-size: 1.08rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* About: smaller + divider */
+.homeAbout{
+  max-width: 78ch;
+  margin: 0 auto;
+  padding-top: .9rem;
+  border-top: 1px solid rgba(255,255,255,.14);
+  opacity: .95;
+}
+.homeAbout p{
+  font-size: .96rem;
+  line-height: 1.7;
+  margin: 0 0 .9rem 0;
+}
+.homeAbout p:last-child{
+  margin-bottom: 0;
+}

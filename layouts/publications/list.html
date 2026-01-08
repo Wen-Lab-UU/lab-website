@@ -2,46 +2,94 @@
 <main class="main">
   <article class="post-single">
 
-    {{/* Intentionally no <h1> to match 'years as headings, titles only' */}}
+    {{/* Optional note at the top */}}
+    {{ with .Params.note }}
+      <div class="pub-note">{{ . | markdownify }}</div>
+    {{ end }}
 
-    {{/* Coerce years to ints so sort can't break if someone quotes them */}}
-    {{ $years := slice }}
+    {{/* Build rows with: yearLabel (string), yearNum (int or -1), items */}}
+    {{ $rows := slice }}
     {{ with .Params.publications }}
       {{ range . }}
-        {{ $y := int (printf "%v" .year) }}
-        {{ $years = $years | append (dict "year" $y "items" .items) }}
+        {{ $label := printf "%v" .year }}
+        {{ $num := -1 }}
+
+        {{/* If it's a clean integer year, store it for sorting */}}
+        {{ if (findRE "^[0-9]{4}$" $label) }}
+          {{ $num = int $label }}
+        {{ end }}
+
+        {{ $rows = $rows | append (dict "yearLabel" $label "yearNum" $num "items" .items) }}
       {{ end }}
     {{ end }}
 
-    {{/* Sort years descending (2025 → 2024 → ...) */}}
-    {{ $years = sort $years "year" "desc" }}
+    {{/* Sort numeric years descending; non-numeric (yearNum=-1) goes last */}}
+    {{ $rows = sort $rows "yearNum" "desc" }}
 
-    {{ range $years }}
-      <h2 class="pub-year">{{ .year }}</h2>
-      <ul class="pub-list">
-        {{ range .items }}
-          <li class="pub-item">
-            {{/* Titles only; optional URL/PDF if provided */}}
-            {{ if .url }}
-              <a href="{{ .url }}" target="_blank" rel="noopener" class="pub-title">{{ .title }}</a>
-            {{ else if .pdf }}
-              <a href="{{ .pdf | relURL }}" target="_blank" rel="noopener" class="pub-title">{{ .title }}</a>
-            {{ else }}
-              <span class="pub-title">{{ .title }}</span>
-            {{ end }}
-          </li>
-        {{ end }}
-      </ul>
+    {{ range $rows }}
+      <h2 class="pub-year">{{ .yearLabel | markdownify }}</h2>
+
+      {{ if .items }}
+        <ul class="pub-list">
+          {{ range .items }}
+            <li class="pub-item">
+              {{/* Titles only; optional URL/PDF if provided */}}
+              {{ if .url }}
+                <a href="{{ .url }}" target="_blank" rel="noopener" class="pub-title">{{ .title | markdownify }}</a>
+              {{ else if .pdf }}
+                <a href="{{ .pdf | relURL }}" target="_blank" rel="noopener" class="pub-title">{{ .title | markdownify }}</a>
+              {{ else }}
+                <span class="pub-title">{{ .title | markdownify }}</span>
+              {{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
     {{ end }}
 
   </article>
 </main>
 
 <style>
-/* Simple compact styling */
-.pub-year{ margin-top:1.25rem; }
-.pub-list{ margin: .25rem 0 1rem 1.25rem; padding:0; }
-.pub-item{ margin: .25rem 0; font-size: 0.95rem; line-height: 1.35; list-style: disc; }
-.pub-title{ text-decoration: none; }
+/* Note at the top */
+.pub-note{
+  margin: .25rem 0 1.1rem 0;
+  font-size: .95rem;
+  line-height: 1.55;
+  opacity: .95;
+  color: #fff;
+}
+
+/* Year headings */
+.pub-year{
+  margin-top: 1.25rem;
+  margin-bottom: .35rem;
+  font-weight: 750;
+  color: #fff;
+}
+
+/* List styling */
+.pub-list{
+  margin: .25rem 0 1rem 1.25rem;
+  padding: 0;
+}
+.pub-item{
+  margin: .25rem 0;
+  font-size: .95rem;
+  line-height: 1.35;
+  list-style: disc;
+  color: #fff;
+}
+.pub-title{
+  text-decoration: none;
+  color: #fff;
+}
+.pub-title:hover{ text-decoration: underline; }
+
+/* Make markdownified <p> not add extra spacing inside list items */
+.pub-item p{
+  margin: 0;
+  display: inline;
+}
 </style>
 {{ end }}

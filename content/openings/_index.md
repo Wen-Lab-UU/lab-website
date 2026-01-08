@@ -41,12 +41,12 @@ opportunities:
     description: "Visiting researcher fellowship."
 
 student_projects:
-  - title: "Master and bachelor thesis projects(Sweden)"
+  - title: "Master and bachelor thesis projects (Sweden)"
     description: "Master and bachelor thesis projects are available for students from Sweden. Contact us for details."
 
 contact:
   name: "Dr. Chenyu Wen"
   email: "Chenyu.wen@angstrom.uu.se"
   note: |
-    Welcome to contact us for more information. Your cover letter and CV may be shared internally and with external committee members for review.
+    Welcome to contacting us for more information. Your cover letter and CV may be shared internally and with external committee members for review.
 ---
