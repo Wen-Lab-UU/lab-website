@@ -38,8 +38,6 @@ canonifyURLs = true
     imageHeight = 160
 
 
-
-  # Lower-level homepage “about” text (smaller than the main intro)
 [params.homeIntro]
 content = """**We explore the hidden links between physics, mathematics, and engineering, from ions dancing in nanoscale channels to neurons firing in complex networks, building bridges between theory and practice to turn bold ideas into reality.**"""
 
@@ -88,11 +86,7 @@ On a macroscale, we model nonlinear dynamical systems, studying the behaviors an
     url = "/teaching/"
     weight = 40
 
-  [[menu.main]]
-    identifier = "news"
-    name = "News"
-    url = "/news/"
-    weight = 50
+ 
 
   [[menu.main]]
     identifier = "openings"

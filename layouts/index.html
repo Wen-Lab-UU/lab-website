@@ -33,11 +33,14 @@
   <!-- MAIN INTRO: centered -->
   {{ with .Site.Params.homeIntro.content }}
     <section class="home-intro">
-      <div class="home-intro-body" align="center">
-        {{ . | markdownify }}
+      <div class="home-intro-body">
+        {{ $html := . | markdownify }}
+        {{ $html = replaceRE "<p>" "<p style=\"text-align:center;\">" $html }}
+        {{ $html | safeHTML }}
       </div>
     </section>
   {{ end }}
+
 
   <!-- spacing between intro and about -->
   <br />
@@ -45,8 +48,10 @@
   <!-- HOME ABOUT: justified -->
   {{ with .Site.Params.homeAbout.content }}
     <section class="home-about">
-      <div class="home-about-body" align="justify">
-        {{ . | markdownify }}
+      <div class="home-about-body" style="max-width:980px; margin:0 auto;">
+        {{ $html := . | markdownify }}
+        {{ $html = replaceRE "<p>" "<p style=\"text-align:justify; text-justify:inter-word;\">" $html }}
+        {{ $html | safeHTML }}
       </div>
     </section>
   {{ end }}
