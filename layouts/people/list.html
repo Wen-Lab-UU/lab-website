@@ -42,9 +42,7 @@
                 {{/* Only show photo for PI and PhD, and only if photo is non-empty */}}
                 {{ $showPhoto := and (or (eq $gname "PI") (eq $gname "PhD")) (ne $photo "") }}
 
-             <div class="person-card {{ if $showPhoto }}has-photo{{ else }}no-photo{{ end }} {{ if or (eq $gname "PI") (eq $gname "PhD") }}pi-wide{{ end }}">
-
-
+                <div class="person-card {{ if $showPhoto }}has-photo{{ else }}no-photo{{ end }} {{ if or (eq $gname "PI") (eq $gname "PhD") }}pi-wide{{ end }}">
 
                   {{ if $showPhoto }}
                     <div class="person-photo">
@@ -69,19 +67,34 @@
                       {{ end }}
                     {{ end }}
 
+                    {{/* NEW: Links row (only if provided) */}}
+                    {{ with (index $p "links") }}
+                      {{ if gt (len .) 0 }}
+                        <div class="person-links">
+                          {{ range . }}
+                            {{ $lab := index . "label" }}
+                            {{ $url := index . "url" }}
+                            {{ if and $lab $url }}
+                              <a class="person-link" href="{{ $url }}" target="_blank" rel="noopener">{{ $lab }}</a>
+                            {{ end }}
+                          {{ end }}
+                        </div>
+                      {{ end }}
+                    {{ end }}
+
                     {{/* Interests: regular paragraph, comma-separated (no boxes) */}}
                     {{ with (index $p "interests") }}
-  {{ $t := printf "%T" . }}
-  {{ if in $t "[]" }}
-    {{ if gt (len .) 0 }}
-      <div class="person-interests">{{ delimit . ", " }}</div>
-    {{ end }}
-  {{ else }}
-    {{ if ne (printf "%v" .) "" }}
-      <div class="person-interests">{{ printf "%v" . }}</div>
-    {{ end }}
-  {{ end }}
-{{ end }}
+                      {{ $t := printf "%T" . }}
+                      {{ if in $t "[]" }}
+                        {{ if gt (len .) 0 }}
+                          <div class="person-interests">{{ delimit . ", " }}</div>
+                        {{ end }}
+                      {{ else }}
+                        {{ if ne (printf "%v" .) "" }}
+                          <div class="person-interests">{{ printf "%v" . }}</div>
+                        {{ end }}
+                      {{ end }}
+                    {{ end }}
 
                   </div>
 
@@ -137,24 +150,23 @@
   align-items:start;
 }
 
-/* Make PI cards span full width (wider, nicer) */
+/* Make PI/PhD cards span full width (wider, nicer) */
 .person-card.pi-wide{
   grid-column: 1 / -1;
 }
 
-/* Optional: give PI a bit more breathing room */
+/* Optional: give PI/PhD a bit more breathing room */
 .person-card.pi-wide.has-photo{
   grid-template-columns: 140px 1fr;
   gap: 1.1rem;
 }
 
-/* Optional: slightly larger PI photo */
+/* Optional: slightly larger PI/PhD photo */
 .person-card.pi-wide .person-photo img{
   width: 140px;
   height: 140px;
   border-radius: 14px;
 }
-
 
 /* Everyone else: no photo block, simple single-column */
 .person-card.no-photo{
@@ -190,10 +202,29 @@
 }
 .person-email{
   font-size:.92rem;
-  margin-bottom:.45rem;
+  margin-bottom:.35rem;
 }
 .person-email a{ color:#fff; text-decoration:none; }
 .person-email a:hover{ text-decoration:underline; }
+
+/* NEW: Links row */
+.person-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.55rem .75rem;
+  margin:.05rem 0 .35rem 0;
+  font-size:.92rem;
+  opacity:.95;
+}
+.person-link{
+  color:#fff;
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.22);
+  padding-bottom:1px;
+}
+.person-link:hover{
+  border-bottom-color: rgba(255,255,255,.55);
+}
 
 /* Interests as normal paragraph (no tags/boxes) */
 .person-interests{

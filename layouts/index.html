@@ -81,18 +81,34 @@
         {{ with $f.title }}<h2>{{ . }}</h2>{{ end }}
         {{ with $f.text }}<p>{{ . }}</p>{{ end }}
 
-        {{ with $f.image }}
-          <div class="funding-image-wrap">
-            <img
-              src="{{ . | relURL }}"
-              alt="{{ or $f.imageAlt "Funding" }}"
-            />
-          </div>
-        {{ end }}
+       {{ with $f.image }}
+  <div class="funding-image-wrap">
+    <img
+      class="funding-image"
+      src="{{ . | relURL }}"
+      alt="{{ or $f.imageAlt "Funding" }}"
+    />
+  </div>
+{{ end }}
+
       </div>
     </section>
   {{ end }}
 
+<style>
+  /* Funding image sizing */
+  .funding-image-wrap{
+    max-width: 980px;      /* match your text width */
+    margin: 0 auto;        /* center the whole block */
+    text-align: center;
+  }
+  .funding-image{
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;      /* <- make it smaller here (try 600–800) */
+    height: auto;
+  }
+</style>
 
 </main>
 {{ end }}

@@ -56,7 +56,7 @@ On a macroscale, we model nonlinear dynamical systems, studying the behaviors an
   [params.homeFunding]
     title = "Funding"
     text  = "We gratefully acknowledge the support from our funding agencies and programs."
-    image = "img/funding/funding.png"   # you will add this image under static/img/funding/
+    image = "img/funding/funding_V2.png"   # you will add this image under static/img/funding/
     imageAlt = "Funding logos"
 
 
