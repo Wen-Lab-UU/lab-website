@@ -31,6 +31,16 @@ people:
           - label: "UU Page"
             url: "https://www.uu.se/en/contact-and-organisation/staff?query=N15-1773"
 
+  - group: "Consultant"
+    items:
+      - name: "Ngan Hoang Pham"
+        role: "Researcher at MyFab"
+        affiliation: ""
+        email: ""
+        photo: "/img/people/Ngan.jpg"
+        interests: "Semiconductor process technology"
+        weight: 1
+
   - group: PhD
     items:
       - name: "Zhiwei Li"

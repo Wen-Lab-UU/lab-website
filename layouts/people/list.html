@@ -11,7 +11,8 @@
     {{ else }}
 
       {{/* Desired display order */}}
-      {{ $order := slice "PI" "PhD" "Master Student" "Bachelor Student" "Alumni" }}
+      {{ $order := slice "PI" "Consultant" "PhD" "Master Student" "Bachelor Student" "Alumni" }}
+
 
       {{ range $order }}
         {{ $gname := . }}
@@ -40,9 +41,11 @@
                 {{ with (index $p "photo") }}{{ $photo = . }}{{ end }}
 
                 {{/* Only show photo for PI and PhD, and only if photo is non-empty */}}
-                {{ $showPhoto := and (or (eq $gname "PI") (eq $gname "PhD")) (ne $photo "") }}
+                {{ $showPhoto := and (or (eq $gname "PI") (eq $gname "Consultant") (eq $gname "PhD")) (ne $photo "") }}
 
-                <div class="person-card {{ if $showPhoto }}has-photo{{ else }}no-photo{{ end }} {{ if or (eq $gname "PI") (eq $gname "PhD") }}pi-wide{{ end }}">
+
+                <div class="person-card {{ if $showPhoto }}has-photo{{ else }}no-photo{{ end }} {{ if or (eq $gname "PI") (eq $gname "Consultant") (eq $gname "PhD") }}pi-wide{{ end }}">
+
 
                   {{ if $showPhoto }}
                     <div class="person-photo">
