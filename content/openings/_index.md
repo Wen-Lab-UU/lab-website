@@ -14,12 +14,7 @@ intro: |
 current_openings:
   - title: "Funded Postdoc: Nanopore single-molecule detection"
     description: |
-      We are hiring a **1 funded postdoc** position in the project about nanopore single-molecule detection technology. Please see more information:
-
-      - Job ad: [Uppsala University - Job #885266](https://www.uu.se/en/about-uu/join-us/jobs-and-vacancies/job-details?query=885266)
-      - Apply via Varbi: [Submit application](https://uu.varbi.com/en/what:login/type:job/jobID:885266)
-
-      The application deadline is **2026-02-02**.
+      We are hiring a **1 funded postdoc** position in the project about nanopore single-molecule detection technology.
 
 funding_intro: |
   Other funding opportunities to join us as a postdoc or visiting scholar.

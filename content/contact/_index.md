@@ -8,7 +8,7 @@ cascade:
 
 address:
   lines:
-    - "Hus 6 Plan 3. Ångströmlaboratoriet,"
+    - "Ångströmlaboratoriet,"
     - "Division of Solid State Electronics"
     - "Department of Electrical Engineering"
     - "Uppsala University"
