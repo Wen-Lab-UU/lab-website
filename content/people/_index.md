@@ -1,4 +1,4 @@
----
+﻿---
 title: "People"
 build:
   list: true
@@ -7,7 +7,7 @@ cascade:
     render: false
 
 people:
-  - group: PI
+  - group: "PI"
     items:
       - name: "Dr. Chenyu Wen"
         role: "Tenure-track Assistant Professor"
@@ -36,42 +36,30 @@ people:
       - name: "Ngan Hoang Pham"
         role: "Researcher at MyFab"
         affiliation: ""
-        email: "ngan.pham@angstrom.uu.se"
+        email: ""
         photo: "/img/people/Ngan.jpg"
         interests: "Semiconductor process technology"
         weight: 1
 
-  - group: PhD
+  - group: "PhD"
     items:
       - name: "Zhiwei Li"
-        role: ""   # removed “PhD Student”
+        role: ""
         affiliation: ""
         email: "zhiwei.li@angstrom.uu.se"
-        interests:
-          - "Neuromorphic devices and circuits"
-          - "Neuronal dynamics"
-        photo: "img/people/zhiweili.jpg"
+        photo: "/img/people/zhiweili.jpg"
+        interests: "Neuromorphic devices and circuits, Neuronal dynamics"
         weight: 1
 
   - group: "Master Student"
     items:
       - name: "Xingdi Tong"
-        role: ""   # removed “Master’s Student”
-        affiliation: ""
-        email: ""
-        interests:
-          - "Machine learning for signal processing"
-        photo: ""
-        weight: 1
-
-      - name: "Xiangyi Shen"
         role: ""
         affiliation: ""
         email: ""
-        interests:
-          - "Neuron network by FPGA"
         photo: ""
-        weight: 2
+        interests: "Machine learning for signal processing"
+        weight: 1
 
   - group: "Bachelor Student"
     items:
@@ -79,50 +67,67 @@ people:
         role: ""
         affiliation: ""
         email: ""
-        interests:
-          - "Neuromorphic circuits by electronic devices"
         photo: ""
+        interests: "Neuromorphic circuits by electronic devices"
         weight: 1
+      - name: "Erik Martinsson"
+        role: ""
+        affiliation: ""
+        email: ""
+        photo: ""
+        interests: ""
+        weight: 2
 
-  - group: Alumni
+      - name: "Pauline Larsson-Sten Thuresson"
+        role: ""
+        affiliation: ""
+        email: ""
+        photo: ""
+        interests: ""
+        weight: 3
+
+      - name: "Theodor Thuresson"
+        role: ""
+        affiliation: ""
+        email: ""
+        photo: ""
+        interests: ""
+        weight: 4
+  - group: "Alumni"
     items:
       - name: "M. Sc. Thor Chumakonde"
         role: "Course project (2026)"
         affiliation: ""
         email: ""
-        interests: []
         photo: ""
+        interests: ""
         weight: 1
-
       - name: "M. Sc. Ellen Gottberg"
         role: "Course project (2026)"
         affiliation: ""
         email: ""
-        interests: []
         photo: ""
+        interests: ""
         weight: 2
-
       - name: "M. Sc. Pouya Ahmadi"
         role: "Master thesis project (2025)"
         affiliation: ""
         email: ""
-        interests: []
         photo: ""
+        interests: ""
         weight: 3
-
       - name: "M. Sc. Sigfrid Nevrell"
         role: "Course project (2025)"
         affiliation: ""
         email: ""
-        interests: []
         photo: ""
+        interests: ""
         weight: 4
-
       - name: "M. Sc. Viktor Westberg"
         role: "Course project (2025)"
         affiliation: ""
         email: ""
-        interests: []
         photo: ""
+        interests: ""
         weight: 5
 ---
