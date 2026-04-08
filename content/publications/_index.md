@@ -11,9 +11,9 @@ note: '\*These authors contributed equally to this work. \# Corresponding author
 publications:
   - year: 2026
     items:
-      - title: "Zhiwei Li, Shi-Li Zhang, **Chenyu Wen**. Bifurcation Analysis Framework of Spiking Neuron Models. *arXiv*, 2026. arXiv:2601.02116."
-      - title: "Xingdi Tong, **Chenyu Wen**. Denoise Stepwise Signals by Diffusion Model Based Approach. *arXiv*, 2026. arXiv:2602.08904."
-      - title: "Mingzhi Jiao, Liangsong Duan, Jiade Zhang, Wei Peng, and **Chenyu Wen**. High-Precision Multigas Detection Based on Pd–Au Bimetallic Decorated ZnO Gas Sensors and PSO Feature Optimization. *ACS Applied Electronic Materials*, 2026. https://doi.org/10.1021/acsaelm.6c00259."
+      - title: "Z. Li, S.-L. Zhang, **C. Wen#**. Bifurcation Analysis Framework of Spiking Neuron Models. *arXiv*, 2026. https://arxiv.org/abs/2601.02116. [physics.app-ph]"
+      - title: "X. Tong, **C. Wen#**. Denoise Stepwise Signals by Diffusion Model Based Approach. *arXiv*, 2026. https://arxiv.org/abs/2602.08904. [eess.SP, physics.app-ph, physics.bio-ph]"
+      - title: "M. Jiao, L. Duan, J. Zhang, W. Peng, and **C. Wen#**. High-Precision Multigas Detection Based on Pd–Au Bimetallic Decorated ZnO Gas Sensors and PSO Feature Optimization. *ACS Applied Electronic Materials*, 2026. https://doi.org/10.1021/acsaelm.6c00259."
 
   - year: 2025
     items:
