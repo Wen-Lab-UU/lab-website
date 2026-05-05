@@ -13,11 +13,10 @@ publications:
     items:
       - title: "Z. Li, S.-L. Zhang, **C. Wen#**. Bifurcation Analysis Framework of Spiking Neuron Models. *arXiv*, 2026. https://arxiv.org/abs/2601.02116. [physics.app-ph]"
       - title: "X. Tong, **C. Wen#**. Denoise Stepwise Signals by Diffusion Model Based Approach. *arXiv*, 2026. https://arxiv.org/abs/2602.08904. [eess.SP, physics.app-ph, physics.bio-ph]"
-      - title: "M. Jiao, L. Duan, J. Zhang, W. Peng, and **C. Wen#**. High-Precision Multigas Detection Based on Pd–Au Bimetallic Decorated ZnO Gas Sensors and PSO Feature Optimization. *ACS Applied Electronic Materials*, 2026. https://doi.org/10.1021/acsaelm.6c00259."
-
-  - year: 2025
-    items:
-      - title: "M. Jiao, H. Dong#, Y. Qiao, R. Guo, C. M. Hung, N. Van Duy, N. Duc Hoa, **C. Wen#**. Accurate Methane Detection in Combustible Gas Mixtures by Using SnO2-Ag-ZnO Gas Sensors with Rapid Responses. *ACS Sensors*, 2025. https://doi.org/10.1021/acssensors.5c02966."
+      - title: "M. Jiao, L. Duan#, J. Zhang, W. Peng, **C. Wen#**. High-Precision Multi-gas Detection Based on Pd–Au Bimetallic Decorated ZnO Gas Sensors and PSO Feature Optimization. *ACS Applied Electronic Materials*, 2026, 8, 7, 3218–3228. https://doi.org/10.1021/acsaelm.6c00259."
+      - title: "R. Guo, R. Li, J. Ding, L. Wen, Y. Zhang#, **C. Wen#**, M. Jiao#. Neural Network for Gas Recognition Based on MOS Electronic Nose: Algorithm Design and Hardware Deployment. *Microchemical Journal*, 2026, 225, 118008. https://doi.org/10.1016/j.microc.2026.118008."
+      - title: "M. Jiao, X. Chen#, B. Deng, K. Mao, **C. Wen#**. Multi-gas recognition based on ZnO–Au–SnO2 heterostructure gas sensors and one-dimensional convolutional neural networks. *Talanta*, 2026, 307, 129904. https://doi.org/10.1016/j.talanta.2026.129904."
+      - title: "M. Jiao, H. Dong#, Y. Qiao, R. Guo, C. M. Hung, N. Van Duy, N. Duc Hoa, **C. Wen#**. Accurate Methane Detection in Combustible Gas Mixtures by Using SnO2-Ag-ZnO Gas Sensors with Rapid Responses. *ACS Sensors*, 2026, 11, 1, 290–298. https://doi.org/10.1021/acssensors.5c02966."
 
   - year: 2024
     items:
