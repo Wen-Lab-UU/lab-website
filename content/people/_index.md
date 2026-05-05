@@ -36,7 +36,7 @@ people:
       - name: "Ngan Hoang Pham"
         role: "Researcher at MyFab"
         affiliation: ""
-        email: ""
+        email: "ngan.pham@angstrom.uu.se"
         photo: "/img/people/Ngan.jpg"
         interests: "Semiconductor process technology"
         weight: 1
@@ -63,7 +63,7 @@ people:
 
   - group: "Bachelor Student"
     items:
-      - name: "Haza Newman"
+      - name: "Haze Newman"
         role: ""
         affiliation: ""
         email: ""

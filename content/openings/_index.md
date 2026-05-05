@@ -11,13 +11,11 @@ intro: |
 
   We currently have the following openings.
 
-current_openings:
-  - title: "Funded Postdoc: Nanopore single-molecule detection"
-    description: |
-      We are hiring a **1 funded postdoc** position in the project about nanopore single-molecule detection technology.
+current_openings: []
 
 funding_intro: |
   Other funding opportunities to join us as a postdoc or visiting scholar.
+
 opportunities:
   - title: "Marie Skłodowska-Curie Actions (MSCA) Postdoctoral Fellowships"
     url: "https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships"
