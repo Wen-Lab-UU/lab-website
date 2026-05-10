@@ -11,7 +11,7 @@ note: '\*These authors contributed equally to this work. \# Corresponding author
 publications:
   - year: 2026
     items:
-      - title: "N. H. Pham,* **C. Wen,*** M. H. Khaksaran, W.-Y. Lee, J. Cruz, K. Hjört, D. Wu, S.-L. Zhang. Planar Solid-State Nanopores toward Scalable Nanofluidic Integration Based on CMOS Technology. *Advanced Engineering Materials*, 2026, e202501868. https://doi.org/10.1002/adem.202501868."
+      - title: "N. H. Pham*, **C. Wen***, M. H. Khaksaran, W.-Y. Lee, J. Cruz, K. Hjört, D. Wu, S.-L. Zhang. Planar Solid-State Nanopores toward Scalable Nanofluidic Integration Based on CMOS Technology. *Advanced Engineering Materials*, 2026, e202501868. https://doi.org/10.1002/adem.202501868."
       - title: "Z. Li, S.-L. Zhang, **C. Wen#**. Bifurcation Analysis Framework of Spiking Neuron Models. *arXiv*, 2026. https://arxiv.org/abs/2601.02116. [physics.app-ph]"
       - title: "X. Tong, **C. Wen#**. Denoise Stepwise Signals by Diffusion Model Based Approach. *arXiv*, 2026. https://arxiv.org/abs/2602.08904. [eess.SP, physics.app-ph, physics.bio-ph]"
       - title: "M. Jiao, L. Duan#, J. Zhang, W. Peng, **C. Wen#**. High-Precision Multi-gas Detection Based on Pd–Au Bimetallic Decorated ZnO Gas Sensors and PSO Feature Optimization. *ACS Applied Electronic Materials*, 2026, 8, 7, 3218–3228. https://doi.org/10.1021/acsaelm.6c00259."
@@ -22,7 +22,7 @@ publications:
   - year: 2024
     items:
       - title: "**C. Wen**, S. Schmid, C. Dekker. Understanding Electrophoresis and Electroosmosis in Nanopore Sensing with the help of the Nanopore Electro-Osmotic trap. *ACS Nano*, 2024, 18, 31, 20449–20458."
-      - title: "W.-Y. Lee,* **C. Wen,*** N. H. Pham, M. H. Khaksaran, S.-K. Lee, S.-L. Zhang. Brownian motion paving the way for molecular translocation in nanopores. *Small Methods*, 2024, 2400042."
+      - title: "W.-Y. Lee*, **C. Wen*,** N. H. Pham, M. H. Khaksaran, S.-K. Lee, S.-L. Zhang. Brownian motion paving the way for molecular translocation in nanopores. *Small Methods*, 2024, 2400042."
       - title: "L. Chen, S. Karilanova, S. Chaki, **C. Wen**, L. Wang, B. Winblad, S.-L. Zhang, A. Özçelikkale, Z.-B. Zhang, Spike-timing based coding in neuromimetic tactile systems yields dynamic object classification, *Science*, 2024, 384, 660-665."
       - title: "X. Chen*, J. W. van de Sande*, J. Ritmejeris*, **C. Wen**, H. Brinkerhoff, A. H. Laszlo, B. Albada, C. Dekker. Resolving Sulfation Posttranslational Modifications on a Peptide Hormone using Nanopores. *ACS Nano*, 2024, 18, 42, 28999–29007."
 
