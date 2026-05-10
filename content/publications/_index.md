@@ -11,6 +11,7 @@ note: '\*These authors contributed equally to this work. \# Corresponding author
 publications:
   - year: 2026
     items:
+      - title: "N. H. Pham,* **C. Wen,*** M. H. Khaksaran, W.-Y. Lee, J. Cruz, K. Hjört, D. Wu, S.-L. Zhang. Planar Solid-State Nanopores toward Scalable Nanofluidic Integration Based on CMOS Technology. *Advanced Engineering Materials*, 2026, e202501868. https://doi.org/10.1002/adem.202501868."
       - title: "Z. Li, S.-L. Zhang, **C. Wen#**. Bifurcation Analysis Framework of Spiking Neuron Models. *arXiv*, 2026. https://arxiv.org/abs/2601.02116. [physics.app-ph]"
       - title: "X. Tong, **C. Wen#**. Denoise Stepwise Signals by Diffusion Model Based Approach. *arXiv*, 2026. https://arxiv.org/abs/2602.08904. [eess.SP, physics.app-ph, physics.bio-ph]"
       - title: "M. Jiao, L. Duan#, J. Zhang, W. Peng, **C. Wen#**. High-Precision Multi-gas Detection Based on Pd–Au Bimetallic Decorated ZnO Gas Sensors and PSO Feature Optimization. *ACS Applied Electronic Materials*, 2026, 8, 7, 3218–3228. https://doi.org/10.1021/acsaelm.6c00259."
