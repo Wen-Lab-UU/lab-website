@@ -22,7 +22,7 @@ publications:
   - year: 2024
     items:
       - title: "**C. Wen**, S. Schmid, C. Dekker. Understanding Electrophoresis and Electroosmosis in Nanopore Sensing with the help of the Nanopore Electro-Osmotic trap. *ACS Nano*, 2024, 18, 31, 20449–20458."
-      - title: "W.-Y. Lee*, **C. Wen*,** N. H. Pham, M. H. Khaksaran, S.-K. Lee, S.-L. Zhang. Brownian motion paving the way for molecular translocation in nanopores. *Small Methods*, 2024, 2400042."
+      - title: "W.-Y. Lee*, **C. Wen***, N. H. Pham, M. H. Khaksaran, S.-K. Lee, S.-L. Zhang. Brownian motion paving the way for molecular translocation in nanopores. *Small Methods*, 2024, 2400042."
       - title: "L. Chen, S. Karilanova, S. Chaki, **C. Wen**, L. Wang, B. Winblad, S.-L. Zhang, A. Özçelikkale, Z.-B. Zhang, Spike-timing based coding in neuromimetic tactile systems yields dynamic object classification, *Science*, 2024, 384, 660-665."
       - title: "X. Chen*, J. W. van de Sande*, J. Ritmejeris*, **C. Wen**, H. Brinkerhoff, A. H. Laszlo, B. Albada, C. Dekker. Resolving Sulfation Posttranslational Modifications on a Peptide Hormone using Nanopores. *ACS Nano*, 2024, 18, 42, 28999–29007."
 
