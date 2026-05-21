@@ -11,7 +11,10 @@ intro: |
 
   We currently have the following openings.
 
-current_openings: []
+current_openings:
+  - title: "Stipend-based Postdoc Position"
+    description: "We are looking for a motivated postdoctoral researcher. Please see the full position description below."
+    url: "/files/postdoc-position.pdf"
 
 funding_intro: |
   Other funding opportunities to join us as a postdoc or visiting scholar.
