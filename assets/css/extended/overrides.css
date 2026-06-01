@@ -199,3 +199,11 @@ hr { border-color: rgba(255,255,255,.2) !important; }
   box-shadow: 0 0 0 1px rgba(255,255,255,.15); /* faint ring for dark bg */
 }
 
+/* ===== Background image sizing adjustment ===== */
+body::before,
+[data-theme="dark"] body::before {
+  background-size: contain !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  background-color: #000 !important;
+}
