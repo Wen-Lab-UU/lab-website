@@ -41,6 +41,15 @@ people:
         interests: "Semiconductor process technology"
         weight: 1
 
+  - group: "Postdoc"
+    items:
+      - name: "Prakash Sarkar"
+        role: ""
+        affiliation: ""
+        email: ""
+        photo: "/img/people/Prakash.JPG"
+        interests: ""
+        weight: 1
   - group: "PhD"
     items:
       - name: "Zhiwei Li"
@@ -131,3 +140,4 @@ people:
         interests: ""
         weight: 5
 ---
+
