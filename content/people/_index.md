@@ -47,7 +47,7 @@ people:
         role: ""
         affiliation: ""
         email: ""
-        photo: "/img/people/Prakash.JPG"
+        photo: "/img/people/Prakash.jpg"
         interests: ""
         weight: 1
   - group: "PhD"
@@ -140,4 +140,5 @@ people:
         interests: ""
         weight: 5
 ---
+
 
