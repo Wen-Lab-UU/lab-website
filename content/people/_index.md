@@ -46,9 +46,9 @@ people:
       - name: "Prakash Sarkar"
         role: ""
         affiliation: ""
-        email: ""
+        email: "prakash.sarkar@angstrom.uu.se"
         photo: "/img/people/Prakash.jpg"
-        interests: ""
+        interests: "Nanopore single molecule protein detection, Novel device design and fabrication"
         weight: 1
   - group: "PhD"
     items:
