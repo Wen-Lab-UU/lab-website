@@ -1,40 +1,41 @@
----
+﻿---
 title: "Openings"
 build:
-  list: true
+  render: always
+  list: always
 cascade:
-  build:
-    render: false
+  type: "openings"
 
 intro: |
   We are looking for motivated and outstanding students. If you are interested in our researches, just contact us.
 
   We currently have the following openings.
 
-current_openings:
-  - title: "Stipend-based Postdoc Position"
-    description: "We are looking for a motivated postdoctoral researcher. Please see the full position description below."
-    url: "/files/postdoc-position.pdf"
+current_openings: []
 
 funding_intro: |
   Other funding opportunities to join us as a postdoc or visiting scholar.
 
 opportunities:
-  - title: "Marie Skłodowska-Curie Actions (MSCA) Postdoctoral Fellowships"
+  - title: "MSCA Postdoctoral Fellowships"
     url: "https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships"
     description: "Competitive EU fellowships for postdoctoral researchers."
-  - title: "Carl Tryggers Stiftelse Postdoc"
+
+  - title: "Carl Tryggers"
     url: "https://www.carltryggersstiftelse.se/ansok/"
-    description: "Funding for postdoctoral research."
-  - title: "Olle Engkvist Stiftelse Postdoc"
+    description: "Research funding opportunities from Carl Tryggers Foundation."
+
+  - title: "Olle Engkvist"
     url: "https://oes.se/att-ansoka/ansokan-vetenskaplig-forskning/"
-    description: "Postdoctoral funding opportunities."
-  - title: "Wenner-Gren Stiftelserna Postdoc"
+    description: "Research funding opportunities from Olle Engkvist Foundation."
+
+  - title: "Wenner-Gren Postdoc"
     url: "https://www.swgc.org/postdoktorsstipendier-sverige"
-    description: "Postdoctoral fellowships in Sweden."
+    description: "Postdoctoral fellowship opportunities from Wenner-Gren Foundations."
+
   - title: "Wenner-Gren Visiting Scholar"
     url: "https://www.swgc.org/gastforskarstipendier-sverige"
-    description: "Visiting researcher fellowship."
+    description: "Visiting scholar fellowship opportunities from Wenner-Gren Foundations."
 
 student_projects:
   - title: "Master and bachelor thesis projects (Sweden)"
@@ -43,6 +44,5 @@ student_projects:
 contact:
   name: "Dr. Chenyu Wen"
   email: "Chenyu.wen@angstrom.uu.se"
-  note: |
-    Welcome to contacting us for more information. Your cover letter and CV may be shared internally and with external committee members for review.
+  note: "Welcome to contacting us for more information. Your cover letter and CV may be shared internally and with external committee members for review."
 ---
