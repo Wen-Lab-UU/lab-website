@@ -15,7 +15,7 @@ people:
           Division of Solid-State Electronics,
           Department of Electrical Engineering,
           Uppsala University
-        email: "chenyu.wen@angstrom.uu.se"
+        email: "chenyu.wen[AT]angstrom.uu.se"
         photo: "/img/people/chenyuwen.jpg"
         interests: "Neuromorphic devices and circuits, Neuronal dynamics, Nanopore sensing, Electronic device characterization and modeling, Transport in nanoconfinement, Nano-fluidics and iontronics, Machine learning algorithms, Signal processing"
         weight: 1
@@ -36,7 +36,7 @@ people:
       - name: "Ngan Hoang Pham"
         role: "Researcher at MyFab"
         affiliation: ""
-        email: "ngan.pham@angstrom.uu.se"
+        email: "ngan.pham[AT]angstrom.uu.se"
         photo: "/img/people/Ngan.jpg"
         interests: "Semiconductor process technology"
         weight: 1
@@ -46,7 +46,7 @@ people:
       - name: "Prakash Sarkar"
         role: ""
         affiliation: ""
-        email: "prakash.sarkar@angstrom.uu.se"
+        email: "prakash.sarkar[AT]angstrom.uu.se"
         photo: "/img/people/Prakash.jpg"
         interests: "Nanopore single molecule protein detection, Novel device design and fabrication"
         weight: 1
@@ -55,7 +55,7 @@ people:
       - name: "Zhiwei Li"
         role: ""
         affiliation: ""
-        email: "zhiwei.li@angstrom.uu.se"
+        email: "zhiwei.li[AT]angstrom.uu.se"
         photo: "/img/people/zhiweili.jpg"
         interests: "Neuromorphic devices and circuits, Neuronal dynamics"
         weight: 1
