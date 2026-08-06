@@ -1,62 +1,284 @@
-{{ define "main" }}
-<main class="main">
-  <article class="post-single">
-    <!-- Big page title (aligned like other pages) -->
+﻿{{ define "main" }}
+<main class="main research-main">
+  <article class="post-single research-page">
+
     <header class="post-header">
       <h1 class="page-title">{{ .Title }}</h1>
     </header>
 
-    <!-- Research items (no duplicate subheading) -->
     {{ with .Params.research }}
-      <div class="res-stack">
-        {{ range . }}
-          <div class="res-item">
-            <h3 class="res-title">{{ index . "title" }}</h3>
-            {{ with (index . "summary") }}
-              <div class="res-summary">{{ . | markdownify }}</div>
+      <div class="research-stack">
+
+        {{ range $item := sort . "weight" }}
+
+          {{ $title := index $item "title" }}
+          {{ $summary := index $item "summary" }}
+          {{ $image := index $item "image" }}
+          {{ $publications := index $item "publications" }}
+
+          <section class="research-card">
+
+            {{ with $image }}
+              <figure class="research-image-wrap">
+                <img
+                  class="research-image"
+                  src="{{ . | relURL }}"
+                  alt="{{ $title }} schematic illustration"
+                  loading="lazy"
+                >
+              </figure>
             {{ end }}
-          </div>
+
+            <div class="research-content">
+
+              <h2 class="research-title">{{ $title }}</h2>
+
+              {{ with $summary }}
+                <div class="research-summary">
+                  {{ . | markdownify }}
+                </div>
+              {{ end }}
+
+              {{ with $publications }}
+                {{ if gt (len .) 0 }}
+                  <div class="research-publications">
+                    <h3 class="research-publications-title">
+                      Selected Publications
+                    </h3>
+
+                    <ol class="research-publications-list">
+                      {{ range . }}
+                        <li>{{ . | markdownify }}</li>
+                      {{ end }}
+                    </ol>
+                  </div>
+                {{ end }}
+              {{ end }}
+
+            </div>
+          </section>
+
         {{ end }}
+
       </div>
     {{ end }}
 
-    <!-- Student Projects as a section heading -->
+
     {{ with .Params.student_projects }}
-      <h2 class="section-title">Student Projects</h2>
-      <div class="res-stack">
-        {{ range . }}
-          <div class="res-item">
-            <h3 class="res-title">{{ index . "title" }}</h3>
-            {{ with (index . "summary") }}
-              <div class="res-summary">{{ . | markdownify }}</div>
-            {{ end }}
-          </div>
-        {{ end }}
-      </div>
+      <section class="student-projects-section">
+        <h2 class="student-projects-heading">Student Projects</h2>
+
+        <div class="student-projects-stack">
+          {{ range sort . "weight" }}
+            <div class="student-project-item">
+              <h3 class="student-project-title">
+                {{ index . "title" }}
+              </h3>
+
+              {{ with (index . "summary") }}
+                {{ if ne . "" }}
+                  <div class="student-project-summary">
+                    {{ . | markdownify }}
+                  </div>
+                {{ end }}
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+      </section>
     {{ end }}
   </article>
 </main>
 
 <style>
-/* Page & section headings */
-.page-title{
-  margin: .2rem 0 1.1rem 0;
-  font-size: clamp(1.9rem, 2.2vw, 2.4rem);
+/* Make the Research page wider than the normal text pages */
+.research-main {
+  max-width: 1180px;
+  width: 100%;
+}
+
+.research-page {
+  width: 100%;
+}
+
+.page-title {
+  margin: .2rem 0 1.6rem;
+  font-size: clamp(2rem, 3vw, 2.6rem);
   font-weight: 700;
 }
-.section-title{
-  margin: 2rem 0 .75rem 0;
-  padding-top: .5rem;
+
+/* Large vertically stacked research cards */
+.research-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.research-card {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(0, 0, 0, .16);
+  backdrop-filter: blur(2px);
+}
+
+/* Large 3:2 image area matching the generated schematic images */
+.research-image-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: rgba(0, 0, 0, .14);
+  border-bottom: 1px solid var(--border);
+}
+
+.research-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Text area underneath each image */
+.research-content {
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.research-title {
+  margin: 0 0 .8rem;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.research-summary {
+  max-width: 980px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.research-summary p {
+  margin: 0;
+}
+
+.research-publications {
+  margin-top: 1.25rem;
+  padding-top: 1.1rem;
   border-top: 1px solid var(--border);
-  font-size: clamp(1.15rem, 1.3vw, 1.35rem);
-  letter-spacing: .2px;
+}
+
+.research-publications-title {
+  margin: 0 0 .75rem;
+  font-size: 1.05rem;
   font-weight: 650;
 }
 
-/* Vertical list blocks */
-.res-stack{ display:flex; flex-direction:column; gap:1rem }
-.res-item{ border:1px solid var(--border); border-radius:12px; padding:1rem }
-.res-title{ margin:0 0 .3rem 0; font-weight:600; font-size:1.05rem }
-.res-summary{ font-size:.95rem; line-height:1.5 }
+.research-publications-list {
+  margin: 0;
+  padding-left: 1.45rem;
+}
+
+.research-publications-list li {
+  margin-bottom: .75rem;
+  padding-left: .15rem;
+  font-size: .96rem;
+  line-height: 1.65;
+}
+
+.research-publications-list li:last-child {
+  margin-bottom: 0;
+}
+
+.research-publications-list li p {
+  display: inline;
+  margin: 0;
+}
+
+/* Medium screens */
+@media (max-width: 900px) {
+  .research-main {
+    max-width: 100%;
+  }
+
+  .research-stack {
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+  .research-card {
+    border-radius: 13px;
+  }
+
+  .research-image-wrap {
+    aspect-ratio: 3 / 2;
+  }
+
+  .research-content {
+    padding: 1rem;
+  }
+
+  .research-title {
+    font-size: 1.25rem;
+  }
+
+  .research-summary,
+  .research-publications-list li {
+    font-size: .93rem;
+  }
+}
+
+/* Student Projects */
+.student-projects-section {
+  margin-top: 2.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.student-projects-heading {
+  margin: 0 0 1rem;
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.student-projects-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.student-project-item {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, .12);
+}
+
+.student-project-title {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.student-project-summary {
+  margin-top: .5rem;
+  font-size: .95rem;
+  line-height: 1.6;
+}
+
+.student-project-summary p {
+  margin: 0;
+}
 </style>
 {{ end }}
+
+
