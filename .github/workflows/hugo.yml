@@ -1,4 +1,4 @@
-name: Deploy Hugo to GitHub Pages
+﻿name: Deploy Hugo to GitHub Pages
 on:
   push:
     branches: [ main ]
@@ -17,7 +17,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Setup Hugo
@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: hugo --minify
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
 
@@ -41,4 +41,5 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
+
