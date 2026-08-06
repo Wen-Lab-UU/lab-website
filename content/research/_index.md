@@ -37,7 +37,8 @@ research:
   - title: "Machine Learning-Based Signal Processing"
     summary: "Understanding and developing machine learning algorithms for signal processing for single-molecule technologies."
     image: "/img/P5.png"
-    publications: []
+    publications:
+      - 'X. Tong, **C. Wen#**. Denoise Stepwise Signals by Diffusion Model Based Approach. *arXiv*, 2026. https://arxiv.org/abs/2602.08904. [eess.SP, physics.app-ph, physics.bio-ph]'
     weight: 5
 student_projects:
   - title: "Silicon neurons and synapses: Electronic circuit design, simulation, and realization"
@@ -52,5 +53,6 @@ student_projects:
     publications: []
     weight: 2
 ---
+
 
 

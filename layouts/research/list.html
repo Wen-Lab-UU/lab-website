@@ -278,7 +278,26 @@
 .student-project-summary p {
   margin: 0;
 }
+
+/* Natural research image proportions */
+.research-image-wrap {
+  aspect-ratio: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+.research-image {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
 </style>
 {{ end }}
+
 
 

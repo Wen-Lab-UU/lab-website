@@ -71,39 +71,21 @@ people:
         weight: 1
 
   - group: "Bachelor Student"
-    items:
-      - name: "Haze Newman"
-        role: ""
-        affiliation: ""
-        email: ""
-        photo: ""
-        interests: "Neuromorphic circuits by electronic devices"
-        weight: 1
-      - name: "Erik Martinsson"
-        role: ""
-        affiliation: ""
-        email: ""
-        photo: ""
-        interests: ""
-        weight: 2
-
-      - name: "Pauline Larsson-Sten Thuresson"
-        role: ""
-        affiliation: ""
-        email: ""
-        photo: ""
-        interests: ""
-        weight: 3
-
-      - name: "Theodor Thuresson"
-        role: ""
-        affiliation: ""
-        email: ""
-        photo: ""
-        interests: ""
-        weight: 4
+    items: []
   - group: "Alumni"
     items:
+      - name: "Haza Newman"
+        role: "Bachelor thesis project (2026)"
+        weight: 1
+      - name: "Erik Martinsson"
+        role: "Bachelor thesis project (2026)"
+        weight: 2
+      - name: "Pauline Larsson-Sten Thuresson"
+        role: "Bachelor thesis project (2026)"
+        weight: 3
+      - name: "Theodor Thuresson"
+        role: "Bachelor thesis project (2026)"
+        weight: 4
       - name: "M. Sc. Thor Chumakonde"
         role: "Course project (2026)"
         affiliation: ""
@@ -140,5 +122,6 @@ people:
         interests: ""
         weight: 5
 ---
+
 
 
