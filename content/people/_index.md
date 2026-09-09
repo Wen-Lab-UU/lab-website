@@ -74,45 +74,47 @@ people:
 
   - group: "Alumni"
     items:
-      - name: "Xingdi Tong"
+      - name: "M.Sc. Xingdi Tong"
         role: "Master thesis project (2026)"
         weight: 1
-      - name: "M. Sc. Thor Chumakonde"
-        role: "Course project (2026)"
-        weight: 2
-
-      - name: "M. Sc. Ellen Gottberg"
-        role: "Course project (2026)"
-        weight: 3
-
-      - name: "M. Sc. Pouya Ahmadi"
-        role: "Master thesis project (2025)"
-        weight: 4
-
-      - name: "M. Sc. Sigfrid Nevrell"
-        role: "Course project (2025)"
-        weight: 5
-
-      - name: "M. Sc. Viktor Westberg"
-        role: "Course project (2025)"
-        weight: 6
 
       - name: "Haza Newman"
         role: "Bachelor thesis project (2026)"
-        weight: 7
+        weight: 2
 
       - name: "Erik Martinsson"
         role: "Bachelor thesis project (2026)"
-        weight: 8
+        weight: 3
 
       - name: "Pauline Larsson-Sten Thuresson"
         role: "Bachelor thesis project (2026)"
-        weight: 9
+        weight: 4
 
       - name: "Theodor Thuresson"
         role: "Bachelor thesis project (2026)"
+        weight: 5
+
+      - name: "M. Sc. Thor Chumakonde"
+        role: "Course project (2026)"
+        weight: 6
+
+      - name: "M. Sc. Ellen Gottberg"
+        role: "Course project (2026)"
+        weight: 7
+
+      - name: "M. Sc. Pouya Ahmadi"
+        role: "Master thesis project (2025)"
+        weight: 8
+
+      - name: "M. Sc. Sigfrid Nevrell"
+        role: "Course project (2025)"
+        weight: 9
+
+      - name: "M. Sc. Viktor Westberg"
+        role: "Course project (2025)"
         weight: 10
 ---
+
 
 
 
