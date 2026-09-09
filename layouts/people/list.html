@@ -33,7 +33,7 @@
             {{ end }}
             {{ $rows = sort $rows "w" "asc" }}
 
-            <div class="people-grid">
+            <div class="people-grid{{ if eq $gname "Alumni" }} alumni-list{{ end }}">
               {{ range $rows }}
                 {{ $p := .p }}
 
@@ -243,6 +243,156 @@
   .person-card.has-photo{ grid-template-columns:96px 1fr; }
   .person-photo img{ width:96px; height:96px; border-radius:12px; }
 }
+
+/* ===== Alumni: simple vertical list in one box ===== */
+.people-grid.alumni-list {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: .35rem 1rem;
+}
+
+/* Remove individual alumni boxes */
+.alumni-list .person-card {
+  display: block !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: .7rem 0 !important;
+  margin: 0 !important;
+}
+
+/* Light separator between entries */
+.alumni-list .person-card + .person-card {
+  border-top: 1px solid rgba(255,255,255,.12) !important;
+}
+
+/* Name and project information on the same line */
+.alumni-list .person-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 .45rem;
+}
+
+.alumni-list .person-name {
+  margin: 0 !important;
+  font-size: inherit !important;
+  font-weight: 500;
+}
+
+.alumni-list .person-role,
+.alumni-list .person-interests {
+  margin: 0 !important;
+  font-size: inherit !important;
+  line-height: inherit;
+}
+
+/* Put project information after the person's name */
+.alumni-list .person-role::before,
+.alumni-list .person-interests::before {
+  content: "— ";
+}
+
+/* Alumni do not need photos or buttons */
+.alumni-list .person-photo-wrap,
+.alumni-list .person-links {
+  display: none !important;
+}
+
+
+/* ===== Compact Alumni list ===== */
+.people-grid.alumni-list {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: .25rem 1rem;
+}
+
+/* One alumni entry per row, no individual card box */
+.alumni-list .person-card {
+  display: block !important;
+  width: 100%;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: .50rem 0 !important;
+}
+
+/* Separator only */
+.alumni-list .person-card + .person-card {
+  border-top: 1px solid rgba(255,255,255,.14) !important;
+}
+
+/* Name and project stay on the same line */
+.alumni-list .person-info {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: baseline !important;
+  gap: .35rem !important;
+  width: 100%;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.alumni-list .person-name,
+.alumni-list .person-role,
+.alumni-list .person-interests {
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: .82rem !important;
+  line-height: 1.35 !important;
+  white-space: nowrap !important;
+}
+
+/* Name remains slightly emphasized */
+.alumni-list .person-name {
+  font-weight: 600 !important;
+  flex: 0 0 auto;
+}
+
+/* Project follows the name */
+.alumni-list .person-role,
+.alumni-list .person-interests {
+  font-weight: 400 !important;
+  flex: 0 0 auto;
+}
+
+.alumni-list .person-role::before,
+.alumni-list .person-interests::before {
+  content: "— ";
+}
+
+/* Alumni do not use photos or links */
+.alumni-list .person-photo-wrap,
+.alumni-list .person-links {
+  display: none !important;
+}
+
+/* On very narrow screens, allow wrapping rather than clipping */
+@media (max-width: 600px) {
+  .alumni-list .person-info {
+    flex-wrap: wrap !important;
+    white-space: normal;
+  }
+
+  .alumni-list .person-name,
+  .alumni-list .person-role,
+  .alumni-list .person-interests {
+    font-size: .80rem !important;
+    white-space: normal !important;
+  }
+}
 </style>
 {{ end }}
+
+
+
+
 

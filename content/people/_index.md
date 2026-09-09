@@ -62,66 +62,62 @@ people:
 
   - group: "Master Student"
     items:
-      - name: "Xingdi Tong"
+      - name: "Erik Näsström"
         role: ""
-        affiliation: ""
         email: ""
         photo: ""
-        interests: "Machine learning for signal processing"
+        interests: "Nanopore signal processing"
         weight: 1
 
   - group: "Bachelor Student"
     items: []
+
   - group: "Alumni"
     items:
-      - name: "Haza Newman"
-        role: "Bachelor thesis project (2026)"
+      - name: "Xingdi Tong"
+        role: "Master thesis project (2026)"
         weight: 1
-      - name: "Erik Martinsson"
-        role: "Bachelor thesis project (2026)"
-        weight: 2
-      - name: "Pauline Larsson-Sten Thuresson"
-        role: "Bachelor thesis project (2026)"
-        weight: 3
-      - name: "Theodor Thuresson"
-        role: "Bachelor thesis project (2026)"
-        weight: 4
       - name: "M. Sc. Thor Chumakonde"
         role: "Course project (2026)"
-        affiliation: ""
-        email: ""
-        photo: ""
-        interests: ""
-        weight: 1
+        weight: 2
+
       - name: "M. Sc. Ellen Gottberg"
         role: "Course project (2026)"
-        affiliation: ""
-        email: ""
-        photo: ""
-        interests: ""
-        weight: 2
+        weight: 3
+
       - name: "M. Sc. Pouya Ahmadi"
         role: "Master thesis project (2025)"
-        affiliation: ""
-        email: ""
-        photo: ""
-        interests: ""
-        weight: 3
+        weight: 4
+
       - name: "M. Sc. Sigfrid Nevrell"
         role: "Course project (2025)"
-        affiliation: ""
-        email: ""
-        photo: ""
-        interests: ""
-        weight: 4
+        weight: 5
+
       - name: "M. Sc. Viktor Westberg"
         role: "Course project (2025)"
-        affiliation: ""
-        email: ""
-        photo: ""
-        interests: ""
-        weight: 5
+        weight: 6
+
+      - name: "Haza Newman"
+        role: "Bachelor thesis project (2026)"
+        weight: 7
+
+      - name: "Erik Martinsson"
+        role: "Bachelor thesis project (2026)"
+        weight: 8
+
+      - name: "Pauline Larsson-Sten Thuresson"
+        role: "Bachelor thesis project (2026)"
+        weight: 9
+
+      - name: "Theodor Thuresson"
+        role: "Bachelor thesis project (2026)"
+        weight: 10
 ---
+
+
+
+
+
 
 
 
