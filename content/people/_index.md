@@ -78,42 +78,44 @@ people:
         role: "Master thesis project (2026)"
         weight: 1
 
-      - name: "Haza Newman"
+      - name: "B.Sc. Haze Newman"
         role: "Bachelor thesis project (2026)"
         weight: 2
 
-      - name: "Erik Martinsson"
+      - name: "B.Sc. Erik Martinsson"
         role: "Bachelor thesis project (2026)"
         weight: 3
 
-      - name: "Pauline Larsson-Sten Thuresson"
+      - name: "B.Sc. Pauline Larsson-Sten Thuresson"
         role: "Bachelor thesis project (2026)"
         weight: 4
 
-      - name: "Theodor Thuresson"
+      - name: "B.Sc. Theodor Thuresson"
         role: "Bachelor thesis project (2026)"
         weight: 5
 
-      - name: "M. Sc. Thor Chumakonde"
+      - name: "M.Sc. Thor Chumakonde"
         role: "Course project (2026)"
         weight: 6
 
-      - name: "M. Sc. Ellen Gottberg"
+      - name: "M.Sc. Ellen Gottberg"
         role: "Course project (2026)"
         weight: 7
 
-      - name: "M. Sc. Pouya Ahmadi"
+      - name: "M.Sc. Pouya Ahmadi"
         role: "Master thesis project (2025)"
         weight: 8
 
-      - name: "M. Sc. Sigfrid Nevrell"
+      - name: "M.Sc. Sigfrid Nevrell"
         role: "Course project (2025)"
         weight: 9
 
-      - name: "M. Sc. Viktor Westberg"
+      - name: "M.Sc. Viktor Westberg"
         role: "Course project (2025)"
         weight: 10
 ---
+
+
 
 
 
