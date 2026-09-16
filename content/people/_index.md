@@ -69,6 +69,12 @@ people:
         interests: "Nanopore signal processing"
         weight: 1
 
+      - name: "Sulidan Daerwan"
+        role: "Master thesis project"
+        email: ""
+        photo: ""
+        interests: "SNN by FPGA"
+        weight: 2
   - group: "Bachelor Student"
     items: []
 
@@ -114,6 +120,7 @@ people:
         role: "Course project (2025)"
         weight: 10
 ---
+
 
 
 
