@@ -75,6 +75,12 @@ people:
         photo: ""
         interests: "SNN by FPGA"
         weight: 2
+      - name: "Sigfrid Nevrell"
+        role: "Master thesis project"
+        email: ""
+        photo: ""
+        interests: "Neuromorphic IC design"
+        weight: 3
   - group: "Bachelor Student"
     items: []
 
@@ -112,14 +118,11 @@ people:
         role: "Master thesis project (2025)"
         weight: 8
 
-      - name: "M.Sc. Sigfrid Nevrell"
-        role: "Course project (2025)"
-        weight: 9
-
       - name: "M.Sc. Viktor Westberg"
         role: "Course project (2025)"
         weight: 10
 ---
+
 
 
 

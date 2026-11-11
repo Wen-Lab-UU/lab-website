@@ -11,6 +11,7 @@ note: '\*These authors contributed equally to this work. \# Corresponding author
 publications:
   - year: 2026
     items:
+      - title: "T. Eriksson, **C. Wen**, C. Dekker#. Quantifying electro-osmotic flow in mutant MspA nanopores. *bioRxiv*, 2026. https://doi.org/10.64898/2026.11.10.765596."
       - title: "F. Liu, **C. Wen**, S. Deindl, Z. Zhang#. Stability and reliability of carbon-coated solid-state nanopores for single molecule analysis. *Nanotechnology*, 2026, 37, 35, 355503. https://doi.org/10.1088/1361-6528/ae9b15."
       - title: "Z. Li, N. H. Pham, S.-L. Zhang, **C. Wen#**. Memristive Behavior and Mechanism in Solid-State Nanopores. *arXiv*, 2026. https://doi.org/10.48550/arXiv.2608.04815. [physics.app-ph]"
       - title: "Z. Li, S.-L. Zhang, **C. Wen#**. Bifurcation Analysis Framework of Spiking Neuron Models. *IEEE Transactions on Circuits and Systems I: Regular Papers*, 2026. https://doi.org/10.1109/TCSI.2026.3710811."
