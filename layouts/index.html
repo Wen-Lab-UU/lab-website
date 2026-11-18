@@ -1,4 +1,4 @@
-﻿{{ define "main" }}
+{{ define "main" }}
 <main class="main">
 
   <!-- HERO: logo and title on separate lines, centered -->
@@ -112,6 +112,33 @@
 </style>
 
 </main>
+<style id="funding-full-width">
+/* Funding image only: match the width of its text column. */
+.home-funding-inner .funding-image-wrap {
+  box-sizing: border-box;
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  margin: 1rem 0 0 !important;
+  padding: 0 !important;
+}
+
+/* Preserve the image's proportions without a fixed height cap. */
+.home-funding-inner .funding-image-wrap img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  margin: 0 !important;
+  object-fit: contain !important;
+}
+</style>
+
 {{ end }}
 
 
